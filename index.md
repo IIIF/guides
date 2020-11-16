@@ -18,7 +18,7 @@ If you notice a correction or would like to add to this lists please either subm
   {% for file in sorted %}
     {% if file.path contains 'location' and file.name != 'template.md' %} 
       <li>
-        <a href="{{file.url}}">{{ file.title }}</a>
+        <a href="{{site.url}}{{site.baseurl}}{{file.url}}">{{ file.title }}</a>
       </li>
     {% endif %}
   {% endfor %}
