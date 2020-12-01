@@ -38,7 +38,7 @@ jobs:
       run: .github/bin/build_jekyll.sh
       env:
         CONFIG: "--config _config.yml,_config_prod.yml"
-        BASE_URL: "/"
+        BASE_URL: ""
     
     # Deploy to live site
     - name: Create GitHub deployment
