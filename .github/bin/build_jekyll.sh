@@ -13,7 +13,12 @@ if [ $? -eq 1 ];then
 fi
 
 echo "Running config: $CONFIG"
-bundle exec jekyll build  --baseurl $BASE_URL $CONFIG
+if [ -z ${BASE_URL} ]; then
+    BASE_CONFIG=""
+else
+    BASE_CONFIG="--baseurl $BASE_URL"
+fi
+bundle exec jekyll build $BASE_CONFIG $CONFIG
 if [ $? -eq 1 ];then
     echo "Failed jekyll build"
     exit 1
