@@ -5,3 +5,5 @@ github_username: IIIF
 webrick:
   headers:
     Access-Control-Allow-Origin: "*"
+
+url: https://preview.iiif.io
