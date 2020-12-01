@@ -26,7 +26,7 @@ jobs:
     - name: Setup ruby
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: '2.7.1'
+        ruby-version: '2.7'
     - run: gem install bundler  
 
     - uses: actions/cache@v1
@@ -42,15 +42,6 @@ jobs:
       env:
         CONFIG: "--config _config.yml"
         BASE_URL: "/guides/${{ env.BRANCH_NAME}}"
-
-    # Create streams
-    - name: Set up Python 3.x
-      uses: actions/setup-python@v2
-      with:
-        # Semantic version range syntax or exact version of a Python version
-        python-version: '3.x' 
-        # Optional - x64 or x86 architecture, defaults to x64
-        architecture: 'x64' 
 
     # Deploy to live site
     - name: Create GitHub deployment
