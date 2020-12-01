@@ -1,4 +1,4 @@
-# IIIF Community
+# IIIF Guides
 A guide to getting IIIF resources from the community
 
 ## Contributing
