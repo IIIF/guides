@@ -2,9 +2,9 @@
 title: National Gallery of Art
 # One of: no, full or associate
 consortium: full
-iiif-collection-homepage: https://www.nga.gov/collection/collection-search.html
+homepage: https://www.nga.gov/collection/collection-search.html
+layout: guide
 ---
-[Back to index](../../)
 
 ![Catalogue image](catalogue.png)
 

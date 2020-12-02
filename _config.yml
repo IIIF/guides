@@ -1,9 +1,12 @@
 theme: minima
-title: IIIF Community
+title: IIIF Resource Guides
 twitter_username: iiif_io
 github_username: IIIF 
 webrick:
   headers:
     Access-Control-Allow-Origin: "*"
+
+plugins:
+  - jekyll-last-modified-at
 
 url: https://preview.iiif.io
