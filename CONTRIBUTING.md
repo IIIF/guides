@@ -31,7 +31,7 @@ The stages to add a submission are as follows:
 
 ## Full instructions
 
-The steps above can all be achieved by using the GitHub web interface without installing any extra software. There is a step by step guide below to take you through this process. 
+The steps above can all be achieved by using the GitHub web interface without installing any extra software. There is a step by step guide below to take you through this process. It may appear extensive but once you have done it a few times you should find its an efficient process and actually quicker than downloading the code and editing using an IDE. The instructions below are for creating a new entry but can be followed if you are editing an existing entry.
 
 ### Step 1: Apply to join the [guides](https://github.com/orgs/IIIF/teams/guides) GitHub team
 
@@ -91,3 +91,93 @@ Now add the name of your file which should be `index.md`.
 Now we have a basic file we are going to add it to the repository and come back and edit it later. If you scroll down to the bottom of the page you will see a box called "Commit new file". Here you can optionally add a note to explain the change your making. This might be useful if you are making a correction and any notes you add here will be seen by the reviewers. Also check that the option button is selected to "Commit directly to the your_branch_name" rather than creating a new branch. Once your happy with your comments click 'Commit new file.'
 
 ![Committing first change](contributing_images/commit.png)
+
+Now you can add screen shots and update the index.md. 
+
+#### Adding screen shots
+
+To add a screen shot we need to upload the image to the directory we are working on. Click on the add file dropdown but this time select Upload files:
+
+![Clicking upload files](contributing_images/upload_file.png)
+
+This will take you to a screen where you can either drag and drop your files or choose your files using a file browser. 
+
+![Selecting files](contributing_images/select_files.png)
+
+Once you have added all of your screen shots scroll down to the bottom where you will see the "Commit changes" box. Add a message explaining what you are adding then click "Commit changes". You will then be taken to a screen where it says it is processing your files before being forwarded on to the front page of the guides repository. Navigate back to the directory which you created so that we can now edit the index.md to add links to these screen shots. 
+
+![Commit files](contributing_images/add_files_commit.png)
+
+#### Editing your index.md or Guide description
+
+From your Guide directory click on the index.md file and then click the pencil icon highlighted in red below to start editing the file.
+
+![Showing how to edit a file](contributing_images/show_edit_index.png)
+
+Now edit your index.md. The first few lines surrounded by the `---` symbol is known as the Front Matter and are where you store variables which the site uses to generate titles and links. To edit a value change the text after the `:` symbol. Note the added text should not contain a `:` symbol. 
+
+![Editing the index.md file](contributing_images/edit-index.png)
+
+Start with editing the front matter where the fields are as follows:
+
+ * __title__: this is the name of the institution. It will appear as the title of the page and also the list of institutions on the front page.
+ * __consortium__: either `full`, `associate` or `no`. You can check if a institution is a consortium member on the IIIF Website [Consortium Page](https://iiif.io/community/consortium/)
+ * __homepage__: this is the URL to either a specific link into the institution's catalogue to find IIIF resources or the front page of the institutions catalogue.
+ * __layout__: leave this as `guide`. This controls the look of the page.
+
+Now we have the front matter sorted we can move on to adding screen shots. Make sure that when you add the next bit you add it on a new line after the last `---`. To add a link to an image using Markdown you use the following form:
+
+```
+![alternate text for the image](path_to_image.png)
+```
+
+Where the text inside the `[]` is used as the alt text for the image and the text inside the `()` is the path to the image. Ensure you don't forget the `!` at the start otherwise it will appear as a link rather than an embedded image. You can also add any Markdown into your file and see this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for a list of options.
+
+A complete example for the Yale Center for British Art is below:
+
+```
+---
+title: Yale Center for British Art
+# One of: no, full or associate
+consortium: full 
+# URL to discovery system for IIIF Resources
+homepage: https://collections.britishart.yale.edu/
+layout: guide
+---
+
+![A screenshot showing the location of the IIIF logo on the Yale Catalogue page](yale_iiiflogo.png)
+
+![A screenshot showing the Manifest URL in Mirador](yale_mirador.png)
+```
+
+Once you are happy with your changes you can scroll down to the Commit Changes part and optionally add a description of your change and click "Commit changes".
+
+When you are happy with your guide and would like to submit it for review you can create a pull request. 
+
+### Step 4: Submit your changes for review (create pull request)
+
+Now we have a branch with all of your changes we want to package it up and submit it as a change request to the main site. With GitHub this process is called submitting a Pull Request. If you click on the Pull Request tab at the top of the page you will be taken to the pull request screen. 
+
+![List of pull requests](contributing_images/pull_requests.png)
+
+GitHub is clever enough to work out which branch you have been working from and may well show you a yellow box with a button called "Compare & pull request" and mention the branch you have been working from. If it does show this box click the "Compare & pull request" button. If it doesn't show this box then you can manually create the pull request by clicking the "New pull request" button that will take you to the same screen below. If you do have to do it manually ensure the compare branch is the one you've made changes to. 
+
+On the create pull request screen you will see a label and description. The label will come from one of your previous commits. Use the description if you want to ask any questions or flag anything for the reviewers. Once your happy with your comments and label click "Create pull request".
+
+![Create Pull Request](contributing_images/create_pull_request.png)
+
+You will then be taken to your Pull request screen. There are a number of useful features on this page. When you first go to the page you may see the checks as Yellow as there is a continuous integration process that is run on all pull requests to create a preview version of the website. If you see that the build is failed this is likely due to an issue with your index.md file and specifically with the front matter part. Feel free to reach out to the IIIF staff if you get a red build error. 
+
+Once the build process has gone to green it will create a deployment which is a test version of your site. In the screen shot below I have expended the "Show environments" link and it list a single deployment. If you click the View deployment button you will be taken to a test website for you to review. 
+
+![Create Pull Request](contributing_images/pull-request.png)
+
+Use this test version to check your entry has appeared in the list and when you click on the link your page looks as you expect. If you need to make changes you can click on the code link next to the Pull requests which will take you back to the front page of the repository. Select your branch in the drop down and then you can make further changes to your files. Any commits you make to your branch will update the pull request so there is not need to create another one. Ensure that any edits you make are on your branch by looking at the drop down highlighted below:
+
+![Check branch you are working on](contributing_images/edits.png)
+
+Once you are happy with your guide add a comment to your pull request to say it is ready for review. The reviewers will get an email when the pull request is created. Once a reviewer has gone over your pull request they will merge it to the main branch and it will be live on the website. They will also delete your branch so as the list of branches don't get too cluttered. Note its always possible to restore a deleted branch. 
+
+Thank you for submitting additions to the IIIF Guides Website.
+
+

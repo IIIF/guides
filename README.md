@@ -3,9 +3,9 @@ A guide to getting IIIF resources from the community
 
 ## Contributing
 
-We welcome pull requests for corrections or new entries. We also have a [Google form]() which you can submit and the IIIF Staff will add your entry. 
+We welcome pull requests for corrections or new entries made on this repo. Please don't fork the repo and send pull request that way. Please see the [CONTRIBUTING.md](CONTRIBUTING.md) guide for full details on how to submit.
 
-To contribute directly to this repository please copy the `template.md` into a new directory in `locations` and rename it `index.md`
+We also have a [Google form](https://forms.gle/S6LLjBy2o4iEBR8C9) which you can submit and the IIIF Staff will add your entry. 
 
 ## Running locally
 
