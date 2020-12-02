@@ -1,5 +1,5 @@
 ---
-title: e-manuscripta
+title: e-manuscripta (Manuscript material from Swiss libraries and archives)
 # One of: no, full or associate
 consortium: no 
 homepage: https://www.e-manuscripta.ch/
