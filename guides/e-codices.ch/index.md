@@ -1,7 +1,7 @@
 ---
 title: e-codices - Virtual Manuscript Library of Switzerland
 # One of: no, full or associate
-consortium: no 
+consortium: associate 
 homepage: https://e-codices.ch/en
 layout: guide
 ---
