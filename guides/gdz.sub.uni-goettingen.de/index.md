@@ -1,7 +1,7 @@
 ---
 title: Göttingen University Collections
 # One of: no, full or associate
-consortium: no 
+consortium: full
 homepage: https://gdz.sub.uni-goettingen.de/
 layout: guide
 ---
