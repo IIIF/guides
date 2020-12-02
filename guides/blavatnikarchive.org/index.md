@@ -1,7 +1,7 @@
 ---
 title: Blavatnik Archive
 # One of: no, full or associate
-consortium: no 
+consortium: full 
 homepage: https://www.blavatnikarchive.org/collections
 layout: guide
 ---
