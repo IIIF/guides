@@ -9,7 +9,7 @@ To contribute directly to this repository please copy the `template.md` into a n
 
 ## Running locally
 
-Run once to instal the libraries:
+Run once to install the libraries:
 
 ``bundle install``
 
