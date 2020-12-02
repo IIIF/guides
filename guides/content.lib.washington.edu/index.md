@@ -1,5 +1,5 @@
 ---
-title: University of Wshington Libraries
+title: University of Washington Libraries
 # One of: no, full or associate
 consortium: no 
 homepage: https://content.lib.washington.edu/
