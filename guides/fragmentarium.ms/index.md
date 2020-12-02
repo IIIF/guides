@@ -1,5 +1,5 @@
 ---
-title: Fragmentarium : Digital Research Laboratory for Medieval Manuscript Fragments
+title: Fragmentarium - Digital Research Laboratory for Medieval Manuscript Fragments
 # One of: no, full or associate
 consortium: no 
 homepage: https://fragmentarium.ms/search
