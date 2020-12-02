@@ -20,7 +20,7 @@ If you notice a correction or would like to add to this lists please either subm
 
 <ul>
   {% assign locations = site.pages %}
-  {% assign sorted = locations | sort:"title" %}
+  {% assign sorted = locations | sort_natural: "title" %}
   {% for file in sorted %}
     {% if file.path contains 'guides' and file.name != 'template.md' %} 
       <li>
