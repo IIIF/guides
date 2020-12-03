@@ -6,4 +6,4 @@ homepage: https://digital.bodleian.ox.ac.uk/
 layout: guide
 ---
 
-![Click on a record, then copy the link attached to the IIIF icon](bod.png)
+![Click on IIIF and other viewers, then copy the view iif manifest link](bod.png)
