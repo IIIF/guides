@@ -9,8 +9,8 @@ Add the suffix `/manifest` to the end of a digitalcommonwealth.org record URL to
 
 **Example**
 
-* Digital Commonwealth URL: https://www.digitalcommonwealth.org/search/commonwealth:668305767
-* Manifest: https://www.digitalcommonwealth.org/search/commonwealth:668305767/manifest
+* Digital Commonwealth URL: [https://www.digitalcommonwealth.org/search/commonwealth:668305767](https://www.digitalcommonwealth.org/search/commonwealth:668305767)
+* Manifest: [https://www.digitalcommonwealth.org/search/commonwealth:668305767/manifest](https://www.digitalcommonwealth.org/search/commonwealth:668305767/manifest)
 
 
 ### Leventhal Map & Education Center
@@ -19,8 +19,8 @@ The Leventhal Map & Education Center [Digital Collections portal](https://collec
 
 **Example**
 
-* LMEC Digital Collections URL: https://collections.leventhalmap.org/search/commonwealth:x059cb10w
-* Manifest: https://collections.leventhalmap.org/search/commonwealth:x059cb10w/manifest
+* LMEC Digital Collections URL: [https://collections.leventhalmap.org/search/commonwealth:x059cb10w](https://collections.leventhalmap.org/search/commonwealth:x059cb10w)
+* Manifest: [https://collections.leventhalmap.org/search/commonwealth:x059cb10w/manifest](https://collections.leventhalmap.org/search/commonwealth:x059cb10w/manifest)
 
 ### See also 
 
