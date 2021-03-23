@@ -6,4 +6,6 @@ homepage: https://portail.biblissima.fr/en/
 layout: guide
 ---
 
-![Screen shot of the Biblissima site showing how to download a manifest.](biblissima.png)
+![Screenshot of the Biblissima site showing how to download or drag and drop a manifest from an item page.](biblissima-1.png)
+
+![Screenshot of the Biblissima site showing how to filter IIIF items from search results.](biblissima-2.png)
