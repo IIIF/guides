@@ -1,4 +1,4 @@
-# IIIF Guides
+# IIIF Guides 
 A guide to getting IIIF resources from the community
 
 ## Contributing
@@ -18,3 +18,5 @@ Run to start the site on [http://localhost:4000](http://localhost:4000):
 ```
 bundle exec jekyll serve
 ```
+
+Testing remote pull..
