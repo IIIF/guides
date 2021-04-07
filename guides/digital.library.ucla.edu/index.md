@@ -1,10 +1,9 @@
 ---
-title: UCLA Digital Library Collections
+title: UCLA Library Digital Collections
 # One of: no, full or associate
-consortium: full 
+consortium: full
 homepage: https://digital.library.ucla.edu/
 layout: guide
 ---
 
-![Click on the share button](ucla-1.png)
-![Copy the IIIF manifest from the button](ucla-2.png)
+![Copy the IIIF manifest from the logo or click to open the manifest in a new window](ucla.png)
