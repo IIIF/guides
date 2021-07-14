@@ -3,7 +3,7 @@ title: Leiden University
 # One of: no, full or associate
 consortium: full 
 # URL to discovery system for IIIF Resources
-homepage: http://digitalcollections.universiteitleiden.nl/
+homepage: https://digitalcollections.universiteitleiden.nl/
 layout: guide
 ---
 
