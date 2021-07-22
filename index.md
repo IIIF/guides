@@ -1,5 +1,8 @@
 ---
 title: Guides to finding IIIF resources
+layout: page
+hero:
+    image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
 ---
 
 This is a brief guide to finding IIIF Manifest URLs from members of the IIIF community.  These guides begin from a record page, so do not include how to search or view an individual record.
