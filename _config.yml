@@ -12,12 +12,6 @@ webrick:
   headers:
     Access-Control-Allow-Origin: "*"
 
-# THEME VARS
-iiifc-theme:
- navbar_menu:
-    - label: 'iiif.io'
-      link: '{{ site.root_url }}'
-
 plugins:
   - jekyll-last-modified-at
 
