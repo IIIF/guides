@@ -8,7 +8,7 @@ breadcrumbs:
     - label: "Get Started"
       link: '{{ site.root_url | absolute_url}}/get-started'
     - label: 'Guides'
-      link: "https://guides.iiif.io"
+      link: "{{ site.guides_url | absolute_url }}"
 ---
 
 You may have heard about IIIF (pronounced "triple eye eff", which stands for the International Image Interoperability Framework) and you may have seen the IIIF logo on websites but did you know that you can take that IIIF resource and use it in another viewer or compatible tool? Different IIIF tools have different features, for example Mirador will allow annotation but the UniversalViewer supports Audio/Visual. This guide aims to show you the ways to find the `IIIF Manifest` and open it in a compatible IIIF tool.
