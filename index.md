@@ -18,6 +18,11 @@ guide_cards:
     image: ''
     link: '/using_iiif_resources/'
 additional_cards:
+  - label: Learn the Basics of How IIIF Works
+    description: Read our plain language description of IIIF technology.
+    image: ''
+    link: '{{ site.root_url | absolute_url }}/get-started/how-iiif-works'
+    alt: 'test'
   - label: IIIF Online Training Course
     description: Open access training materials covering the Image and Presentation APIs as well as annotating images, among other topics.
     image: ''
