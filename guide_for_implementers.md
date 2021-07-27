@@ -7,7 +7,7 @@ breadcrumbs:
  - label: Get Started
    link: '{{ site.root_url }}/get-started'
  - label: Guides
-   link: '{{ site.guides_url | absolute_url }}'
+   link: '/'
 ---
 
 So you’ve been [convinced of the benefits of the International Image Interoperability Framework]({{ site.root_url | absolute_url }}/get-started/why-iiif/), and you’re ready to pursue implementing IIIF (pronounced “triple eye eff”) for your own resources. This brief guide will lead you through some of the decision points to help get you going.
