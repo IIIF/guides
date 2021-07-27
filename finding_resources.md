@@ -1,23 +1,20 @@
 ---
-title: Guides to finding IIIF resources
+title: Guides to Finding IIIF Resources
 layout: page
 hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
-
 breadcrumbs:
  - label: Get Started
    link: '{{ site.root_url }}/get-started'
  - label: Guides
-   link: index.html
+   link: '{{ site.guides_url | absolute_url }}'
 ---
 
 This is a brief guide to finding IIIF Manifest URLs from members of the IIIF community.  These guides begin from a record page, so do not include how to search or view an individual record.
 
-Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers](https://medium.com/@IIIF_io/how-to-use-iiif-resources-and-image-viewers-bd378a68b013) guide to open it in one of the many IIIF Viewers. 
+Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers](/using_iiif_resources.md) guide to open it in one of the many IIIF Viewers. 
 
-This site is a work in progress and we are working to transfer all of the institution's from the St Andrews list which was an inspiration for this site:
-
- * St Andrew's [IIIF Resources List](https://www.st-andrews.ac.uk/assets/university/library/documents/IIF%20resources.pdf)
+This site is a work in progress, and heavily inspired by the initial work done by St Andrew's University to compile the initial [IIIF Resources List](https://www.st-andrews.ac.uk/assets/university/library/documents/IIF%20resources.pdf).
 
 "Copy this link" is the final step in many of the guides and this involves right-clicking and "copy link address" or similar. Alternatively left click to open the link, then copy the address in the address bar. 
 
