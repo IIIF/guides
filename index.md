@@ -1,40 +1,69 @@
 ---
-title: Guides to finding IIIF resources
-layout: page
+title: Guides 
+layout: default
+subtitle: A set of resources to help you find and work with IIIF materials, built by members of the IIIF community
 hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
-
 breadcrumbs:
  - label: Get Started
-   link: '{{ site.root_url }}/get-started'
- - label: Guides
-   link: index.html
+   link: '{{ site.root_url | absolute_url}}/get-started'
+guide_cards:
+  - label: Find IIIF Resources
+    description: Discover IIIF-enabled materials from institutions around the world.
+    image: ''
+    link: '/finding_resources/'
+    alt_text: 'test'
+  - label: How to Use IIIF Viewers
+    description: Learn how to use IIIF materials in a variety of viewers for teaching, research across sites, and more.
+    image: ''
+    link: '/using_iiif_resources/'
+additional_cards:
+  - label: IIIF Online Training Course
+    description: Open access training materials covering the Image and Presentation APIs as well as annotating images, among other topics.
+    image: ''
+    link: '{{ site.root_url | absolute_url}}/get-started/training/'
+    alt_text: 
+  - label: Non-English IIIF Resources
+    description: A variety of tutorials, videos, and tools source from many countries within the IIIF community. 
+    image: ''
+    link: '{{ site.root_url | absolute_url }}/get-started/non-english/'
+    alt_text: 
+  - label: IIIF Image playground
+    description: Try changing some of the parameters of a URL to see exactly how the IIIF Image API works. 
+    image: ''
+    link: https://www.learniiif.org/image-api/playground
+    alt_text: 
+implementer_cards:
+  - label: Guide for IIIF Implementers
+    description: This brief guide will lead you through some of the decision points to help get you going with IIIF.
+    image: ''
+    link: /guide_for_implementers/
+    alt_text: 
+
 ---
 
-This is a brief guide to finding IIIF Manifest URLs from members of the IIIF community.  These guides begin from a record page, so do not include how to search or view an individual record.
+{{ theme.block-center-start }}
 
-Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers](https://medium.com/@IIIF_io/how-to-use-iiif-resources-and-image-viewers-bd378a68b013) guide to open it in one of the many IIIF Viewers. 
+## Guides to Finding and Working with IIIF Materials
 
-This site is a work in progress and we are working to transfer all of the institution's from the St Andrews list which was an inspiration for this site:
+{% include blocks/cards.html items=page.guide_cards %}
 
- * St Andrew's [IIIF Resources List](https://www.st-andrews.ac.uk/assets/university/library/documents/IIF%20resources.pdf)
+{{ theme.block-end }}
 
-"Copy this link" is the final step in many of the guides and this involves right-clicking and "copy link address" or similar. Alternatively left click to open the link, then copy the address in the address bar. 
+{{ theme.block-center-start }}
 
-## Contribution and corrections
+## Guides for Implementers Considering IIIF
 
-If you notice a correction or would like to add to this list please either submit a pull request to [the repository](https://github.com/IIIF/guides) or fill in  [this Google form](https://forms.gle/S6LLjBy2o4iEBR8C9) and the IIIF Staff will add your entry. If you are submitting through GitHub please read the [Contributing](CONTRIBUTING/) guide.
+{% include blocks/cards.html items=page.implementer_cards %}
 
-## Collections
+{{ theme.block-end }}
 
-<ul>
-  {% assign locations = site.pages %}
-  {% assign sorted = locations | sort_natural: "title" %}
-  {% for file in sorted %}
-    {% if file.path contains 'guides' and file.name != 'template.md' %} 
-      <li>
-        <a href="{{site.url}}{{site.baseurl}}{{file.url}}">{{ file.title }}</a>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+{{ theme.block-center-start }}
+
+
+## Other Tutorials and Guides of Interest
+
+{% include blocks/cards.html items=page.additional_cards %}
+
+{{ theme.block-end }}
+
