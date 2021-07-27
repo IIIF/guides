@@ -1,7 +1,7 @@
 ---
 title: Brown University Digital Repository
 # One of: no, full or associate
-consortium: full
+consortium: associate
 homepage: https://repository.library.brown.edu/studio/
 layout: guide
 ---
