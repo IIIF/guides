@@ -1,7 +1,7 @@
 ---
 title: Bavarian State Library (BSB) / Munich Digitization Centre (MDZ)
 # One of: no, full or associate
-consortium: no 
+consortium: full 
 homepage: https://www.digitale-sammlungen.de/en/
 layout: guide
 ---
