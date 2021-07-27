@@ -43,34 +43,34 @@ A branch creates a copy of all the pages in the website so that you can edit the
 
 To create a branch go to the [Guides Repository](https://github.com/IIIF/guides) and click the branch drop down circled in red in the screen shot below:
 
-![View the available branches](contributing_images/view_branch.png)
+![View the available branches]({{ site.guides_url | absolute_url}}/contributing_images/view_branch.png)
 
 For this guide I am going to add the entry for the Yale Center for British Art, so where it says "Find or create a branch..." I am going to call my pull request `adding_yale_british_art`. I entered this text in the first red box in the screen shot below then I clicked the "Create branch: adding_yale_british_art" link which is highlighted by the second red box. 
 
 
-![Add branch](contributing_images/adding_branch.png)
+![Add branch]({{ site.guides_url | absolute_url}}/contributing_images/adding_branch.png)
 
 Once you click the Create branch link you should see the branch has been created with a blue information message at the top and also in the drop down you should see your new branch is selected. Both of these have been highlighted in the screen shot below.
 
-![Branch created](contributing_images/branch_created.png)
+![Branch created]({{ site.guides_url | absolute_url}}/contributing_images/branch_created.png)
 
 ### Step 3: Create your guide
 
 Now we have a branch to work on we can create our guide. The first step is to create a directory for our entry. If you click on the guides directory you will see a list of guides that already exist and also a template.md file. We are going to copy the template.md to be our index file for our new Guide. If you click on the template.md file you will see the file displayed in GitHub but not the source file we need. Click the RAW button highlighted in Red below. 
 
-![template.md file in GitHub](contributing_images/template.png)
+![template.md file in GitHub]({{ site.guides_url | absolute_url}}/contributing_images/template.png)
 
 When you click the link you will see the source of the MD file and it should look similar to the screen shot below. Copy all of the text in this file as we will use this to start off our guide.
 
-![RAW template.md file](contributing_images/template-raw.png)
+![RAW template.md file]({{ site.guides_url | absolute_url}}/contributing_images/template-raw.png)
 
 Now we have the template copied we need to go back to the list of guides (I had to click the browser back button twice). From here we are going to create our `index.md` which is the front page to our guide. GitHub has a funny way of dealing with directories and the only way to create them is if a file exists in that directory. So when we create this file in a new directory GitHub will also create it for us. To create the `index.md` file click the `Add File` button and then "Create New File".  
 
-![GitHub list of Guides](contributing_images/guide-list.png)
+![GitHub list of Guides]({{ site.guides_url | absolute_url}}/contributing_images/guide-list.png)
 
 This will create an empty file and we will paste in the information we copied from the template so it looks like the following:
 
-![Create index file](contributing_images/create_index.png)
+![Create index file]({{ site.guides_url | absolute_url}}/contributing_images/create_index.png)
 
 Now we need to add the filename and ensure we have the correct directory added. The directory will be named after the domain name of the site you are adding. So in this example the site is:
 
@@ -78,19 +78,19 @@ Now we need to add the filename and ensure we have the correct directory added. 
 
 so I am going to put the guide in a directory called `collections.britishart.yale.edu`. To create the directory type it into the "Name your file" text box then add a `/` character at the end. 
 
-![Adding directory](contributing_images/add_dir1.png)
+![Adding directory]({{ site.guides_url | absolute_url}}/contributing_images/add_dir1.png)
 
 As soon as you add the `/` character it will create the directory for you. 
 
-![Adding directory after slash](contributing_images/add_dir2.png)
+![Adding directory after slash]({{ site.guides_url | absolute_url}}/contributing_images/add_dir2.png)
 
 Now add the name of your file which should be `index.md`.
 
-![Adding index.md](contributing_images/index_filename.png)
+![Adding index.md]({{ site.guides_url | absolute_url}}/contributing_images/index_filename.png)
 
 Now we have a basic file we are going to add it to the repository and come back and edit it later. If you scroll down to the bottom of the page you will see a box called "Commit new file". Here you can optionally add a note to explain the change your making. This might be useful if you are making a correction and any notes you add here will be seen by the reviewers. Also check that the option button is selected to "Commit directly to the your_branch_name" rather than creating a new branch. Once your happy with your comments click 'Commit new file.'
 
-![Committing first change](contributing_images/commit.png)
+![Committing first change]({{ site.guides_url | absolute_url}}/contributing_images/commit.png)
 
 Now you can add screen shots and update the index.md. 
 
@@ -98,25 +98,25 @@ Now you can add screen shots and update the index.md.
 
 To add a screen shot we need to upload the image to the directory we are working on. Click on the add file dropdown but this time select Upload files:
 
-![Clicking upload files](contributing_images/upload_file.png)
+![Clicking upload files]({{ site.guides_url | absolute_url}}/contributing_images/upload_file.png)
 
 This will take you to a screen where you can either drag and drop your files or choose your files using a file browser. 
 
-![Selecting files](contributing_images/select_files.png)
+![Selecting files]({{ site.guides_url | absolute_url}}/contributing_images/select_files.png)
 
 Once you have added all of your screen shots scroll down to the bottom where you will see the "Commit changes" box. Add a message explaining what you are adding then click "Commit changes". You will then be taken to a screen where it says it is processing your files before being forwarded on to the front page of the guides repository. Navigate back to the directory which you created so that we can now edit the index.md to add links to these screen shots. 
 
-![Commit files](contributing_images/add_files_commit.png)
+![Commit files]({{ site.guides_url | absolute_url}}/contributing_images/add_files_commit.png)
 
 #### Editing your index.md or Guide description
 
 From your Guide directory click on the index.md file and then click the pencil icon highlighted in red below to start editing the file.
 
-![Showing how to edit a file](contributing_images/show_edit_index.png)
+![Showing how to edit a file]({{ site.guides_url | absolute_url}}/contributing_images/show_edit_index.png)
 
 Now edit your index.md. The first few lines surrounded by the `---` symbol is known as the Front Matter and are where you store variables which the site uses to generate titles and links. To edit a value change the text after the `:` symbol. Note the added text should not contain a `:` symbol. 
 
-![Editing the index.md file](contributing_images/edit-index.png)
+![Editing the index.md file]({{ site.guides_url | absolute_url}}/contributing_images/edit-index.png)
 
 Start with editing the front matter where the fields are as follows:
 
@@ -158,23 +158,23 @@ When you are happy with your guide and would like to submit it for review you ca
 
 Now we have a branch with all of your changes we want to package it up and submit it as a change request to the main site. With GitHub this process is called submitting a Pull Request. If you click on the Pull Request tab at the top of the page you will be taken to the pull request screen. 
 
-![List of pull requests](contributing_images/pull_requests.png)
+![List of pull requests]({{ site.guides_url | absolute_url}}/contributing_images/pull_requests.png)
 
 GitHub is clever enough to work out which branch you have been working from and may well show you a yellow box with a button called "Compare & pull request" and mention the branch you have been working from. If it does show this box click the "Compare & pull request" button. If it doesn't show this box then you can manually create the pull request by clicking the "New pull request" button that will take you to the same screen below. If you do have to do it manually ensure the compare branch is the one you've made changes to. 
 
 On the create pull request screen you will see a label and description. The label will come from one of your previous commits. Use the description if you want to ask any questions or flag anything for the reviewers. Once your happy with your comments and label click "Create pull request".
 
-![Create Pull Request](contributing_images/create_pull_request.png)
+![Create Pull Request]({{ site.guides_url | absolute_url}}/contributing_images/create_pull_request.png)
 
 You will then be taken to your Pull request screen. There are a number of useful features on this page. When you first go to the page you may see the checks as Yellow as there is a continuous integration process that is run on all pull requests to create a preview version of the website. If you see that the build is failed this is likely due to an issue with your index.md file and specifically with the front matter part. Feel free to reach out to the IIIF staff if you get a red build error. 
 
 Once the build process has gone to green it will create a deployment which is a test version of your site. In the screen shot below I have expended the "Show environments" link and it list a single deployment. If you click the View deployment button you will be taken to a test website for you to review. 
 
-![Create Pull Request](contributing_images/pull-request.png)
+![Create Pull Request]({{ site.guides_url | absolute_url}}/contributing_images/pull-request.png)
 
 Use this test version to check your entry has appeared in the list and when you click on the link your page looks as you expect. If you need to make changes you can click on the code link next to the Pull requests which will take you back to the front page of the repository. Select your branch in the drop down and then you can make further changes to your files. Any commits you make to your branch will update the pull request so there is not need to create another one. Ensure that any edits you make are on your branch by looking at the drop down highlighted below:
 
-![Check branch you are working on](contributing_images/edits.png)
+![Check branch you are working on]({{ site.guides_url | absolute_url}}/contributing_images/edits.png)
 
 Once you are happy with your guide add a comment to your pull request to say it is ready for review. The reviewers will get an email when the pull request is created. Once a reviewer has gone over your pull request they will merge it to the main branch and it will be live on the website. They will also delete your branch so as the list of branches don't get too cluttered. Note its always possible to restore a deleted branch. 
 

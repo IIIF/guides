@@ -17,7 +17,7 @@ This site is a work in progress and we are working to transfer all of the instit
 
 ## Contribution and corrections
 
-If you notice a correction or would like to add to this list please either submit a pull request to [the repository](https://github.com/IIIF/guides) or fill in  [this Google form](https://forms.gle/S6LLjBy2o4iEBR8C9) and the IIIF Staff will add your entry. If you are submitting through GitHub please read the [Contributing](CONTRIBUTING.html) guide.
+If you notice a correction or would like to add to this list please either submit a pull request to [the repository](https://github.com/IIIF/guides) or fill in  [this Google form](https://forms.gle/S6LLjBy2o4iEBR8C9) and the IIIF Staff will add your entry. If you are submitting through GitHub please read the [Contributing](CONTRIBUTING/) guide.
 
 ## Collections
 
