@@ -6,7 +6,7 @@ author: IIIF-C Staff
 date: Last updated 2020-04-07
 breadcrumbs:
     - label: "Get Started"
-      link: '/get-started'
+      link: '{{ site.root_url | absolute_url}}/get-started'
     - label: 'Guides'
       link: "https://guides.iiif.io"
 ---
@@ -22,7 +22,7 @@ This IIIF Manifest itself is accessible via a URL that points to a document onli
 
 ## Finding a IIIF Manifest URL
 
-There are various ways to find a manifest URL, and this is easier on some websites than others. We've put together an [entire guide to finding IIIF resources from a large number of sites]({{ site.guides_url }}), so that's a great place to start. (And if you'd like to add an entry to our Guide to help future explorers, please help us out via our [form about making contributions and corrections!]({{ site.guides_url }}/#contribution-and-corrections))
+There are various ways to find a manifest URL, and this is easier on some websites than others. We've put together an [entire guide to finding IIIF resources from a large number of sites]({{ site.guides_url }}), so that's a great place to start. (And if you'd like to add an entry to our Guide to help future explorers, please help us out via our [form about making contributions and corrections!]({{site.guides_url | absolute_url}}/finding_resources/#contribution-and-corrections))
 
 Overall, the easiest method is to look for the IIIF logo on a content provider's site:
 
