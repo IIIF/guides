@@ -1,7 +1,7 @@
 ---
 title: National Library of Scotland
 # One of: no, full or associate
-consortium: full
+consortium: associate
 homepage: https://digital.nls.uk/gallery/
 layout: guide
 ---
