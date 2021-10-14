@@ -12,7 +12,7 @@ breadcrumbs:
 
 This is a brief guide to finding IIIF Manifest URLs from members of the IIIF community.  These guides begin from a record page, so do not include how to search or view an individual record.
 
-Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers]({{ site.guides_url | absolute_url }}using_iiif_resources/) guide to open it in one of the many IIIF Viewers. 
+Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers]({{ site.guides_url | absolute_url }}/using_iiif_resources/) guide to open it in one of the many IIIF Viewers. 
 
 This site is a work in progress, and heavily inspired by the initial work done by St Andrew's University to compile the initial [IIIF Resources List](https://www.st-andrews.ac.uk/assets/university/library/documents/IIF%20resources.pdf).
 
