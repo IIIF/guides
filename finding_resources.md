@@ -12,7 +12,7 @@ breadcrumbs:
 
 This is a brief guide to finding IIIF Manifest URLs from members of the IIIF community.  These guides begin from a record page, so do not include how to search or view an individual record.
 
-Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers]({{ site.guides_url | absolute_url }}/using_iiif_resources/) guide to open it in one of the many IIIF Viewers. 
+Once you have a manifest URL you can use the [How to use IIIF Resources and Viewers]({{ site.guides_url | absolute_url }}using_iiif_resources/) guide to open it in one of the many IIIF Viewers. 
 
 This site is a work in progress, and heavily inspired by the initial work done by St Andrew's University to compile the initial [IIIF Resources List](https://www.st-andrews.ac.uk/assets/university/library/documents/IIF%20resources.pdf).
 
@@ -23,14 +23,13 @@ This site is a work in progress, and heavily inspired by the initial work done b
 If you notice a correction or would like to add to this list please either submit a pull request to [the repository](https://github.com/IIIF/guides) or fill in  [this Google form](https://forms.gle/S6LLjBy2o4iEBR8C9) and the IIIF Staff will add your entry. If you are submitting through GitHub please read the [Contributing]({{ site.guides_url |absolute_url }}/CONTRIBUTING/) guide.
 
 ## Collections
-
 <ul>
   {% assign locations = site.pages %}
   {% assign sorted = locations | sort_natural: "title" %}
   {% for file in sorted %}
     {% if file.path contains 'guides' and file.name != 'template.md' %} 
       <li>
-        <a href="{{site.url}}{{site.baseurl}}{{file.url}}">{{ file.title }}</a>
+        <a href="{{ site.guides_url | append: file.url |  absolute_url}}">{{ file.title }}</a>
       </li>
     {% endif %}
   {% endfor %}
