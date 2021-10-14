@@ -23,14 +23,13 @@ This site is a work in progress, and heavily inspired by the initial work done b
 If you notice a correction or would like to add to this list please either submit a pull request to [the repository](https://github.com/IIIF/guides) or fill in  [this Google form](https://forms.gle/S6LLjBy2o4iEBR8C9) and the IIIF Staff will add your entry. If you are submitting through GitHub please read the [Contributing]({{ site.guides_url |absolute_url }}/CONTRIBUTING/) guide.
 
 ## Collections
-
 <ul>
   {% assign locations = site.pages %}
   {% assign sorted = locations | sort_natural: "title" %}
   {% for file in sorted %}
     {% if file.path contains 'guides' and file.name != 'template.md' %} 
       <li>
-        <a href="{{site.url}}{{site.baseurl}}{{file.url}}">{{ file.title }}</a>
+        <a href="{{ site.guides_url | append: file.url |  absolute_url}}">{{ file.title }}</a>
       </li>
     {% endif %}
   {% endfor %}
