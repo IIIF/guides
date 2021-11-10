@@ -3,9 +3,7 @@ site_id: guides
 theme: iiifc-theme
 title: IIIF Resource Guides
 permalink:      pretty
-root_url:       https://beta.iiif.io
-api_url:        https://beta.iiif.io/api
-cookbook_url:   https://beta.iiif.io/api/cookbook
+
 guides_url:   ''
 
 webrick:

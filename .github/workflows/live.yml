@@ -39,9 +39,8 @@ jobs:
       run: bundle exec rake test:html
     - name: Test internal links
       run: bundle exec rake test:links:internal
-    - name: Test *iiif.io* links
-      run: bundle exec rake test:links:iiif
-
+   # - name: Test *iiif.io* links
+   #   run: bundle exec rake test:links:iiif
 
     # Deploy to live site
     - name: Create GitHub deployment
@@ -71,4 +70,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-        env_url: "https://beta.iiif.io/guides/index.html"
+        env_url: "https://iiif.io/guides/index.html"
