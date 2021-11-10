@@ -1,11 +1,20 @@
 ---
-layout: default
+layout: page
+
+hero:
+    image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
+
+breadcrumbs:
+ - label: Get Started
+   link: '{{ site.root_url }}/get-started'
+ - label: Guides
+   link: index.html
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
+   <!-- <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>-->
+    <p class="post-meta">Last update: 
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
