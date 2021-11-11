@@ -37,10 +37,19 @@ breadcrumbs:
     {{ content }}
   </div>
 
+  {%- if page.direct -%}
+  <div style="padding-top: 5px; padding-bottom: 10px;">
+    <p>Direct link to item:</p>
+
+    <a href="{{page.direct}}">{{page.direct}}</a>
+  </div>
+  {%- endif -%}
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
+   
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
   <a href="../../index.html">Back to Index</a><br/><br/>
 </article>
