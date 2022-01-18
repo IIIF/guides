@@ -5,7 +5,7 @@ hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
 
 breadcrumbs:
- - label: Get Started
+ - label: Get started
    link: '{{ site.root_url }}/get-started'
  - label: Guides
    link: index.html

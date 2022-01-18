@@ -1,10 +1,10 @@
 ---
-title: Guides to Finding IIIF Resources
+title: Guides to finding IIIF resources
 layout: page
 hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
 breadcrumbs:
- - label: Get Started
+ - label: Get started
    link: '{{ site.root_url }}/get-started'
  - label: Guides
    link: '/'
