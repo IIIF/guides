@@ -1,10 +1,10 @@
 ---
-title: Guide For IIIF Implementers
+title: Guide for IIIF implementers
 layout: spec
 hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
 breadcrumbs:
- - label: Get Started
+ - label: Get started
    link: '{{ site.root_url }}/get-started'
  - label: Guides
    link: '/'
@@ -24,7 +24,7 @@ The [iiif-discuss list](https://groups.google.com/forum/#!forum/iiif-discuss) ca
 The community also maintains the [Awesome IIIF](https://github.com/IIIF/awesome-iiif) list with links to software and resources.
 
 
-## Information Gathering
+## Information gathering
 
 IIIF often requires pulling together people in different roles and data from different systems. We have created a [questionnaire]({{ site.root_url | absolute_url }}/assets/acc_implementation_questionnaire_011017.pdf) that can help you gather the kind of information needed to implement IIIF and self-assess.
 
@@ -77,7 +77,7 @@ The Cookbook gathers together examples of how to create IIIF Presentation API as
 
 The [Cookbook][annex-cookbook] webpages are under constant development and the list of recipes include links to completed recipes and place holders for future recipes. The community welcomes additions to the [Cookbook][annex-cookbook]. To get started, review the [Cookbook process][recipe-process] and say hello on the Cookbook [Slack](http://bit.ly/iiif-slack) channel.
 
-### Viewers and Site Integration
+### Viewers and site integration
 
 One choice you’ll need to make is what viewer you want to use for your IIIF resources on your own site. The choice breaks down into viewers that support only the Image API with deep zoom (at any compliance level) and viewers that support the Presentation API for displaying metadata and more than one image. When [looking for a viewer](https://github.com/IIIF/awesome-iiif#image-viewers) to use consider whether it is an image viewer or a presentation manifest viewer.
 
@@ -104,7 +104,7 @@ The **[Change Discovery API]({{ site.api_url | absolute_url }}/discovery/)**
  leverages existing techniques, specifications, and tools in order to promote widespread adoption of an easy-to-implement service for describing changes to IIIF content resources and the location of those resources to harvest. Content providers can implement this API to enable the collaborative development of global or thematic search engines and portal applications that ultimately allow users to easily find and engage with content available via existing IIIF APIs.
 
 
-## Other Considerations
+## Other considerations
 
 The goal of IIIF is to be interoperable allowing sharing and user choice. To enable this sharing and make your image resources available to web applications hosted on other domains, you will also need to consider some technical details. Since most of the image viewers use JavaScript, your image server will need to support [cross-origin resource sharing (CORS)](http://enable-cors.org/). 
 

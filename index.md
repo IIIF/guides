@@ -5,30 +5,30 @@ subtitle: A set of resources to help you find and work with IIIF materials, buil
 hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
 breadcrumbs:
- - label: Get Started
+ - label: Get started
    link: '{{ site.root_url | absolute_url}}/get-started'
 guide_cards:
-  - label: Find IIIF Resources
+  - label: Find IIIF resources
     description: Discover IIIF-enabled materials from institutions around the world.
     link: '/finding_resources/'
-  - label: How to Use IIIF Viewers
+  - label: How to use IIIF viewers
     description: Learn how to use IIIF materials in a variety of viewers for teaching, research across sites, and more.
     link: '/using_iiif_resources/'
 additional_cards:
-  - label: Learn the Basics of How IIIF Works
+  - label: Learn the basics of how IIIF works
     description: Read our plain language description of IIIF technology.
     link: '{{ site.root_url | absolute_url }}/get-started/how-iiif-works'
-  - label: IIIF Online Training Course
+  - label: IIIF online training course
     description: Open access training materials covering the Image and Presentation APIs as well as annotating images, among other topics.
     link: '{{ site.root_url | absolute_url}}/get-started/training/'
   - label: Non-English IIIF Resources
     description: A variety of tutorials, videos, and tools source from many countries within the IIIF community. 
     link: '{{ site.root_url | absolute_url }}/get-started/non-english/'
-  - label: IIIF Image playground
+  - label: IIIF image playground
     description: Try changing some of the parameters of a URL to see exactly how the IIIF Image API works. 
     link: https://www.learniiif.org/image-api/playground
 implementer_cards:
-  - label: Guide for IIIF Implementers
+  - label: Guide for IIIF implementers
     description: This brief guide will lead you through some of the decision points to help get you going with IIIF.
     link: /guide_for_implementers/
 
@@ -36,7 +36,7 @@ implementer_cards:
 
 {{ theme.block-center-start }}
 
-## Guides to Finding and Working with IIIF Materials
+## Guides to finding and working with IIIF materials
 
 {% include blocks/cards.html items=page.guide_cards %}
 
@@ -44,7 +44,7 @@ implementer_cards:
 
 {{ theme.block-center-start }}
 
-## Guides for Implementers Considering IIIF
+## Guides for implementers considering IIIF
 
 {% include blocks/cards.html items=page.implementer_cards %}
 
@@ -53,7 +53,7 @@ implementer_cards:
 {{ theme.block-center-start }}
 
 
-## Other Tutorials and Guides of Interest
+## Other tutorials and guides of interest
 
 {% include blocks/cards.html items=page.additional_cards %}
 

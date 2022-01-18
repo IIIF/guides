@@ -1,5 +1,5 @@
 ---
-title: Contributing to IIIF Guides
+title: Contributing to IIIF guides
 ---
 <a href="index.html">Back to Index</a><br/><br/>
 We welcome pull requests to the IIIF Guides repository but please read the following guidance. 
@@ -108,7 +108,7 @@ Once you have added all of your screen shots scroll down to the bottom where you
 
 ![Commit files]({{ site.guides_url | absolute_url}}/contributing_images/add_files_commit.png)
 
-#### Editing your index.md or Guide description
+#### Editing your index.md or guide description
 
 From your Guide directory click on the index.md file and then click the pencil icon highlighted in red below to start editing the file.
 
