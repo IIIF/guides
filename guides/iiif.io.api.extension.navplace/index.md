@@ -20,7 +20,7 @@ In simple terms, `navPlace` is used to supply geographic coordinates pertinent t
 This is a simplified interpretation of the [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/).
 
 1. Generate a new basic HTML page with a specific container element for Leaflet.  Make sure to include the leaflet.css and leaflet.js script.
- ```
+ ```html
 <html>
     <head>
         <title>Leaflet Example</title>
@@ -39,7 +39,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 ```
 
 2. Generate a Manifest that contains navPlace.  In this example, we expect the geographic coordinates will be a FeatureCollection containsing a single 'Point' Feature.  
-```
+```json
 {
   "@context": [
     "http://iiif.io/api/extension/navPlace-context/context.json",
@@ -95,7 +95,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 3. Register with Leaflet and obtain your access token at https://account.mapbox.com/auth/signin/?route-to=%22https://account.mapbox.com/access-tokens/%22
 
 4. Add Leaflet script to HTML page.
- ```
+ ```html
 <html>
     <head>
         <title>Leaflet Example</title>
