@@ -20,7 +20,8 @@ In simple terms, `navPlace` is used to supply geographic coordinates pertinent t
 This is a simplified interpretation of the [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/).
 
 1. Generate a new basic HTML page with a specific container element for Leaflet.  Make sure to include the leaflet.css and leaflet.js script.
- ```html
+
+```html
 <html>
     <head>
         <title>Leaflet Example</title>
@@ -39,6 +40,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 ```
 
 2. Generate a Manifest that contains navPlace.  In this example, we expect the geographic coordinates will be a FeatureCollection containsing a single 'Point' Feature.  
+
 ```json
 {
   "@context": [
@@ -95,7 +97,8 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 3. Register with Leaflet and obtain your access token at https://account.mapbox.com/auth/signin/?route-to=%22https://account.mapbox.com/access-tokens/%22
 
 4. Add Leaflet script to HTML page.
- ```html
+ 
+```html
 <html>
     <head>
         <title>Leaflet Example</title>
@@ -162,15 +165,13 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
       }
     </script>
 </html>
+```
 
- ```
-
-That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the Feature or FeatureCollection found in the `navPlace` property of this Manifest. You can [go to the example page](/example.html) to see it.  You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
+That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the Feature or FeatureCollection found in the `navPlace` property of this Manifest. You can [go to the example page](example.html) to see it.  You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
 
 ## Quick links
 Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedurs
 
  * [Google Maps](https://projectmirador.org/)
  * [OpenStreetMap](https://www.google.com)
- * 
 
