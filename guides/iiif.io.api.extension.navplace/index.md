@@ -170,7 +170,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the Feature or FeatureCollection found in the `navPlace` property of this Manifest. You can [go to the example page](example.html) to see it.  You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
 
 ## Quick links
-Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedurs
+Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures.
 
  * [Google Maps](https://projectmirador.org/)
  * [OpenStreetMap](https://www.google.com)
