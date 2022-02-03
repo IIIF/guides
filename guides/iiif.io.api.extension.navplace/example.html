@@ -8,14 +8,14 @@
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 		   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		   crossorigin=""></script>
-
     </head>
-    
     <body>
         <div id="leafletInstanceContainer" style="height: 100em;"></div>
     </body>
-    
     <script>
+    	/**
+			A crude and quickly made Manifest with an empty Canvas.
+    	*/
     	let manifestObj = {
 		  "@context": [
 		    "http://iiif.io/api/extension/navPlace-context/context.json",
@@ -31,7 +31,12 @@
 		  "items": [
 		    {
 		      "id": "http://www.example.org/canvas/1.json",
-		      "type": "Canvas"
+		      "type": "Canvas",
+		      "label": {
+			    "en": [
+			      "Canvas Label"
+			    ]
+			  }
 		    }
 		  ],
 		  "navPlace": {
@@ -64,10 +69,11 @@
 		  }
 		}
 		initializeLeafletMap(manifestObj)
+    
     /**
-     * Initialize the Leaflet Map.
-     * The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.  In reality, you may need to fetch() it first, or may even plan to supply them after initializing the Leaflet map.
-     * */
+     	Initialize the Leaflet Map.
+     	The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.  In reality, you may need to fetch() it first, or may even plan to supply them after initializing the Leaflet map.
+    */
     	function initializeLeafletMap(manifestObject){
     		let startingCoords = [12,12]
     		let mymap = L.map('leafletInstanceContainer') 
@@ -77,17 +83,9 @@
 		        id: 'mapbox.satellite',
 		        accessToken: 'pk.eyJ1IjoidGhlaGFiZXMiLCJhIjoiY2pyaTdmNGUzMzQwdDQzcGRwd21ieHF3NCJ9.SSflgKbI8tLQOo2DuzEgRQ'
 		    }).addTo(mymap)
-		    
-		    /*
-		    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGhlaGFiZXMiLCJhIjoiY2pyaTdmNGUzMzQwdDQzcGRwd21ieHF3NCJ9.SSflgKbI8tLQOo2DuzEgRQ', {
-			    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-			    maxZoom: 18,
-			    id: 'mapbox.satellite',
-			    accessToken: 'pk.eyJ1IjoidGhlaGFiZXMiLCJhIjoiY2pyaTdmNGUzMzQwdDQzcGRwd21ieHF3NCJ9.SSflgKbI8tLQOo2DuzEgRQ'
-			}).addTo(mymap);
-			*/
 		    mymap.setView(startingCoords,2);
-		    //Add the GeoJSON from the Manifest object
+
+		    //Add the GeoJSON from the Manifest object (manifestObject["navPlace"])
 		    L.geoJSON(manifestObject.navPlace, {
 		        pointToLayer: function (feature, latlng) {
 		            let appColor = "#08c49c"
@@ -105,8 +103,8 @@
     	}
 
     	/**
-    	 * A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding to the map.  This is where you supply the HTML or plain text containing the metadata you wish to show.  Here we are looking for a "label" and "summary".
-    	 * */
+    	  A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding to the map.  This is where you supply the HTML or plain text containing the metadata you wish to show.  Here we are looking for a "label" and "summary".  I want them to show "display: block" so I wrap them in a <div> element.
+	  	*/
     	function pointEachFeature(feature, layer){
     		//Here is where you detec what metadata appears in the pop-ups.  For our purposes here, we assume the metadata you want to show is in the GeoJSON 'properties` property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
     		let popupContent = ``
