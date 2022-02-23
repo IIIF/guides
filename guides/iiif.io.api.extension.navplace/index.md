@@ -125,12 +125,15 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
       function initializeLeafletMap(manifestObject){
           let startingCoords = [12,12]
           let mymap = L.map('leafletInstanceContainer')
-          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox.satellite',
-            accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
+          L.tileLayer(
+          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19,
+            worldCopyJump: true,
+            retina: '@2x',
+            detectRetina: false
+          }
+        ).addTo(mymap);
         mymap.setView(startingCoords,2);
         //Add the GeoJSON from the Manifest object
         L.geoJSON(manifestObject.navPlace, {
