@@ -181,7 +181,7 @@ crossorigin=""/>
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 crossorigin=""></script>
 
-<div id="leafletInstanceContainer" style="height: 150em;"></div>
+<div id="leafletInstanceContainer" style="height: 28em;"></div>
 <script>
   //A crude and quickly made Manifest with an empty Canvas.
   let manifestObj = {
