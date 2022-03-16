@@ -94,9 +94,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 }
 ```
 
-3. Register with Leaflet and obtain your access token at https://account.mapbox.com/auth/signin/?route-to=%22https://account.mapbox.com/access-tokens/%22
-
-4. Add Leaflet script to HTML page.
+3. Add Leaflet script to HTML page.
  
 ```html
 <html>
@@ -119,22 +117,26 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
       let manifest = {...}
       initializeLeaflet(manifest)
       /**
-        Initialize the Leaflet Map.  Notice that you will need to replace the access_token value witn your access token.
-        The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.  In reality, you may need to fetch() it first, or may even plan to supply them after initializing the Leaflet map.
+        Initialize the Leaflet Map.  The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.
       */
       function initializeLeafletMap(manifestObject){
-          let startingCoords = [12,12]
-          let mymap = L.map('leafletInstanceContainer')
-          L.tileLayer(
-          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19,
-            worldCopyJump: true,
-            retina: '@2x',
-            detectRetina: false
-          }
-        ).addTo(mymap);
-        mymap.setView(startingCoords,2);
+        let startingCoords = [12,12]
+        let mymap = L.map('leafletInstanceContainer')
+        let leafletOptions = 
+        {
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 19
+        }
+        /**
+          Supply the Tile layer you want to use, as well as other options.
+          Find tile layers at http://leaflet-extras.github.io/leaflet-providers/preview/
+         * */
+        L.tileLayer(
+          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+          leafletOptions
+        ).addTo(mymap)
+        mymap.setView(startingCoords,2)
+
         //Add the GeoJSON from the Manifest object
         L.geoJSON(manifestObject.navPlace, {
             pointToLayer: function (feature, latlng) {
@@ -153,7 +155,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
       }
 
       /**
-         A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding to the map.  Here is where you detec what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
+         A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding these features to the map.  Here is where you detect what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
       */
       function pointEachFeature(feature, layer){
          if (feature.properties) {
@@ -170,7 +172,123 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 </html>
 ```
 
-That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the Feature or FeatureCollection found in the `navPlace` property of this Manifest. You can [go to the example page](example.html) to see it.  You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
+That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the Feature or FeatureCollection found in the `navPlace` property of this Manifest.  Below you will see the code implemented! You can also [go to the example page](example.html) to see it on its own.  You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
+
+<html>
+    <head>
+        <title>Leaflet Example</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+       crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+       crossorigin=""></script>
+    </head>
+    <body>
+      <div id="leafletInstanceContainer" style="height: 100em;"></div>
+      <script>
+      //A crude and quickly made Manifest with an empty Canvas.
+      let manifestObj = {
+        "@context": [
+          "http://iiif.io/api/extension/navPlace-context/context.json",
+          "http://iiif.io/api/presentation/3/context.json"
+        ],
+        "id": "http://www.example.org/manifest/1.json",
+        "type": "Manifest",
+        "label": {
+          "en": [
+            "Manifest Label"
+          ]
+        },
+        "items": [
+          {
+            "id": "http://www.example.org/canvas/1.json",
+            "type": "Canvas",
+            "label": {
+            "en": [
+              "Canvas Label"
+            ]
+          }
+          }
+        ],
+        "navPlace": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "id": "http://www.example.org/geojson/1.json",
+              "type": "Feature",
+              "properties": {
+                "label": {
+                  "en": [
+                    "Label to see in the Leaflet pop-up."
+                  ]
+                },
+                "summary": {
+                  "en": [
+                    "Summary to see in the Leaflet pop-up"
+                  ]
+                }
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  9.9374867,
+                  51.53345
+                ]
+              }
+            }
+          ]
+        }
+      }
+      initializeLeafletMap(manifestObj)
+
+      function initializeLeafletMap(manifestObject){
+        let startingCoords = [12,12]
+        let mymap = L.map('leafletInstanceContainer') 
+        L.tileLayer(
+          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19,
+            worldCopyJump: true,
+            retina: '@2x',
+            detectRetina: false
+          }
+        ).addTo(mymap)
+        mymap.setView(startingCoords,2);
+
+        //Add the GeoJSON from the Manifest object (manifestObject["navPlace"])
+        L.geoJSON(manifestObject.navPlace, {
+            pointToLayer: function (feature, latlng) {
+                let appColor = "#08c49c"
+                return L.circleMarker(latlng, {
+                    radius: 8,
+                    fillColor: appColor,
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                });
+            },
+            onEachFeature: pointEachFeature
+        }).addTo(mymap)
+      }
+
+      function pointEachFeature(feature, layer){
+        let popupContent = ``
+         if (feature.properties) {
+            if(feature.properties.label.en) {
+                popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
+            }
+            if(feature.properties.summary.en) {
+                popupContent += `<div><label>Summary:</label>${feature.properties.summary.en}</div>`
+            }
+        }
+        layer.bindPopup(popupContent)
+      }
+    </script>
+    </body>
+</html>
 
 ## Quick links
 Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures.

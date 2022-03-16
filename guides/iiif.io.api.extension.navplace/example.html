@@ -12,116 +12,117 @@
     </head>
     <body>
         <div id="leafletInstanceContainer" style="height: 100em;"></div>
-   
-    <script>
-    	/**
-			A crude and quickly made Manifest with an empty Canvas.
-    	*/
-    	let manifestObj = {
-		  "@context": [
-		    "http://iiif.io/api/extension/navPlace-context/context.json",
-		    "http://iiif.io/api/presentation/3/context.json"
-		  ],
-		  "id": "http://www.example.org/manifest/1.json",
-		  "type": "Manifest",
-		  "label": {
-		    "en": [
-		      "Manifest Label"
-		    ]
-		  },
-		  "items": [
-		    {
-		      "id": "http://www.example.org/canvas/1.json",
-		      "type": "Canvas",
-		      "label": {
+	    <script>
+	    	/**
+				A crude and quickly made Manifest with an empty Canvas.
+	    	*/
+	    	let manifestObj = {
+			  "@context": [
+			    "http://iiif.io/api/extension/navPlace-context/context.json",
+			    "http://iiif.io/api/presentation/3/context.json"
+			  ],
+			  "id": "http://www.example.org/manifest/1.json",
+			  "type": "Manifest",
+			  "label": {
 			    "en": [
-			      "Canvas Label"
+			      "Manifest Label"
+			    ]
+			  },
+			  "items": [
+			    {
+			      "id": "http://www.example.org/canvas/1.json",
+			      "type": "Canvas",
+			      "label": {
+				    "en": [
+				      "Canvas Label"
+				    ]
+				  }
+			    }
+			  ],
+			  "navPlace": {
+			    "type": "FeatureCollection",
+			    "features": [
+			      {
+			        "id": "http://www.example.org/geojson/1.json",
+			        "type": "Feature",
+			        "properties": {
+			          "label": {
+			            "en": [
+			              "Label to see in the Leaflet pop-up."
+			            ]
+			          },
+			          "summary": {
+			            "en": [
+			              "Summary to see in the Leaflet pop-up"
+			            ]
+			          }
+			        },
+			        "geometry": {
+			          "type": "Point",
+			          "coordinates": [
+			            9.9374867,
+			            51.53345
+			          ]
+			        }
+			      }
 			    ]
 			  }
-		    }
-		  ],
-		  "navPlace": {
-		    "type": "FeatureCollection",
-		    "features": [
-		      {
-		        "id": "http://www.example.org/geojson/1.json",
-		        "type": "Feature",
-		        "properties": {
-		          "label": {
-		            "en": [
-		              "Label to see in the Leaflet pop-up."
-		            ]
-		          },
-		          "summary": {
-		            "en": [
-		              "Summary to see in the Leaflet pop-up"
-		            ]
-		          }
-		        },
-		        "geometry": {
-		          "type": "Point",
-		          "coordinates": [
-		            9.9374867,
-		            51.53345
-		          ]
-		        }
-		      }
-		    ]
-		  }
-		}
-		initializeLeafletMap(manifestObj)
-    
-    /**
-     	Initialize the Leaflet Map.
-     	The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.  In reality, you may need to fetch() it first, or may even plan to supply them after initializing the Leaflet map.
-    */
-    	function initializeLeafletMap(manifestObject){
-    		let startingCoords = [12,12]
-    		let mymap = L.map('leafletInstanceContainer') 
-		    L.tileLayer(
-			    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			      maxZoom: 19,
-			      worldCopyJump: true,
-			      retina: '@2x',
-			      detectRetina: false
+			}
+			initializeLeafletMap(manifestObj)
+	    
+	    /**
+	     	Initialize the Leaflet Map.
+	     	The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.  In reality, you may need to fetch() it first, or may even plan to supply them after initializing the Leaflet map.
+	    */
+	    	function initializeLeafletMap(manifestObject){
+	    		let startingCoords = [12,12]
+	    		let mymap = L.map('leafletInstanceContainer') 
+			    L.tileLayer(
+				    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				      maxZoom: 19,
+				      worldCopyJump: true,
+				      retina: '@2x',
+				      detectRetina: false
+				    }
+				  ).addTo(mymap)
+			    mymap.setView(startingCoords,2);
+
+			    //Add the GeoJSON from the Manifest object (manifestObject["navPlace"])
+			    L.geoJSON(manifestObject.navPlace, {
+			        pointToLayer: function (feature, latlng) {
+			            let appColor = "#08c49c"
+			            return L.circleMarker(latlng, {
+			                radius: 8,
+			                fillColor: appColor,
+			                color: "#000",
+			                weight: 1,
+			                opacity: 1,
+			                fillOpacity: 0.8
+			            });
+			        },
+			        onEachFeature: pointEachFeature
+			    }).addTo(mymap)
+	    	}
+
+	    	/**
+	    	  A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding to the map.  This is where you supply the HTML or plain text containing the metadata you wish to show.  Here we are looking for a "label" and "summary".  I want them to show "display: block" so I wrap them in a <div> element.
+		  	*/
+	    	function pointEachFeature(feature, layer){
+	    		/*
+	    		Here is where you detec what metadata appears in the pop-ups.  For our purposes here, we assume the metadata you want to show is in the GeoJSON 'properties` property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
+	    		*/
+	    		let popupContent = ``
+	    		 if (feature.properties) {
+			        if(feature.properties.label.en) {
+			            popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
+			        }
+			        if(feature.properties.summary.en) {
+			            popupContent += `<div><label>Summary:</label>${feature.properties.summary.en}</div>`
+			        }
 			    }
-			  ).addTo(mymap)
-		    mymap.setView(startingCoords,2);
-
-		    //Add the GeoJSON from the Manifest object (manifestObject["navPlace"])
-		    L.geoJSON(manifestObject.navPlace, {
-		        pointToLayer: function (feature, latlng) {
-		            let appColor = "#08c49c"
-		            return L.circleMarker(latlng, {
-		                radius: 8,
-		                fillColor: appColor,
-		                color: "#000",
-		                weight: 1,
-		                opacity: 1,
-		                fillOpacity: 0.8
-		            });
-		        },
-		        onEachFeature: pointEachFeature
-		    }).addTo(mymap)
-    	}
-
-    	/**
-    	  A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding to the map.  This is where you supply the HTML or plain text containing the metadata you wish to show.  Here we are looking for a "label" and "summary".  I want them to show "display: block" so I wrap them in a <div> element.
-	  	*/
-    	function pointEachFeature(feature, layer){
-    		//Here is where you detec what metadata appears in the pop-ups.  For our purposes here, we assume the metadata you want to show is in the GeoJSON 'properties` property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
-    		let popupContent = ``
-    		 if (feature.properties) {
-		        if(feature.properties.label.en) {
-		            popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
-		        }
-		        if(feature.properties.summary.en) {
-		            popupContent += `<div><label>Summary:</label>${feature.properties.summary.en}</div>`
-		        }
-		    }
-		    layer.bindPopup(popupContent)
-    	}
-    </script>
+			    layer.bindPopup(popupContent)
+	    	}
+	    </script>
     </body>
 </html>
