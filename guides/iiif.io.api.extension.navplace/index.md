@@ -180,7 +180,8 @@ crossorigin=""/>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 crossorigin=""></script>
-<div id="leafletInstanceContainer" style="height: 100em;"></div>
+
+<div id="leafletInstanceContainer" style="height: 150em;"></div>
 <script>
   //A crude and quickly made Manifest with an empty Canvas.
   let manifestObj = {
