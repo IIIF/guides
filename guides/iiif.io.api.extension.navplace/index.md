@@ -2,10 +2,7 @@
 title: How to Use navPlace With Leaflet
 id: using_navplace
 layout: guide
-author: thehabes
-date: Last updated 2022-02-03
-consortium: full
-
+author: Bryan Haberberger
 ---
 
 The IIIF Presentation API (3) was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use a Leaflet script to ingest the geographic coordinates from the Manifest.  
@@ -26,12 +23,8 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
     <head>
         <title>Leaflet Example</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-       crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-       crossorigin=""></script>
+        <link rel="stylesheet" href="...leaflet.css"/>
+        <script src="...leaflet.js"></script>
     </head>
     <body>
         <div id="leafletInstanceContainer"></div>
@@ -101,12 +94,8 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
     <head>
         <title>Leaflet Example</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-       crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-       crossorigin=""></script>
+        <link rel="stylesheet" href="...leaflet.css"/>
+        <script src="...leaflet.js"></script>
     </head>
     
     <body>
@@ -172,7 +161,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
 </html>
 ```
 
-That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the FeatureCollection found in the `navPlace` property of this Manifest.  Below you will see the code implemented! You can also [go to the example page](example.html) to see it on its own.  You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
+That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the FeatureCollection found in the `navPlace` property of this Manifest.  Below you will see the code implemented! You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -285,9 +274,15 @@ crossorigin=""></script>
   }
 </script>
 
+You can also [go to the example page](example.html) to see it on its own.
+
 ## Quick links
-Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures.
+Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures.  This list is not exhaustive.
 
  * [Google Maps](https://projectmirador.org/)
+ * [Apple Maps](https://www.apple.com/maps/)
  * [OpenStreetMap](https://www.google.com)
+ * [OpenLayers](https://openlayers.org/)
+ * [Map Box](https://www.mapbox.com/)
+ * [MapQuest](https://www.mapquest.com/)
 
