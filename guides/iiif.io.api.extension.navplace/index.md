@@ -5,13 +5,13 @@ layout: spec
 author: Bryan Haberberger
 ---
 
-The IIIF Presentation API (3) was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use a Leaflet script to ingest the geographic coordinates from the Manifest.  
+The IIIF Presentation API 3 was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use a Leaflet script to ingest the geographic coordinates from the Manifest.  
 
 ## Why Leaflet?
 Leaflet is one of the most well known and easy to understand web mapping platforms. Once you know how to set one up, you know how to set more up.  Using Leaflet as the base will offer the most understandable instructions to a large audience.  You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
 
 ## I want to know more about the `navPlace` property.
-In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API (3) extension page](https://iiif.io/api/extension/navplace/).
+In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extension page](https://iiif.io/api/extension/navplace/).
 
 ## Set up an HTML page with Leaflet
 This is a simplified interpretation of the [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/).
@@ -172,7 +172,7 @@ crossorigin=""></script>
 <div style="font-weight: bold;">
     <a href="https://guides.iiif.io/">IIIF Guides</a> #41 Leaflet Example
 </div>
-<div id="leafletInstanceContainer" style="height: 28em;"></div>
+<div id="leafletInstanceContainer" style="height:28em; max-width:68em;"></div>
 <script>
   //A crude and quickly made Manifest with an empty Canvas.
   let manifestObj = {
