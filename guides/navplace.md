@@ -1,8 +1,16 @@
 ---
-title: How to Use navPlace With Leaflet
+title: How to Use the navPlace Extension With Leaflet
 id: using_navplace
 layout: spec
 author: Bryan Haberberger
+breadcrumbs:
+ - label: Get started
+   link: '{{ site.root_url }}/get-started'
+ - label: Guides
+   link: '/'
+redirect_from:
+  '{{ site.guides_url }}/iiif.io.api.extension.navplace/'
+
 ---
 
 The IIIF Presentation API 3 was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use a Leaflet script to ingest the geographic coordinates from the Manifest.  
