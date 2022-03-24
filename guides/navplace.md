@@ -9,7 +9,7 @@ breadcrumbs:
  - label: Guides
    link: '/'
 redirect_from:
-  '{{ site.guides_url }}/iiif.io.api.extension.navplace/'
+  '{{ site.guides_url }}/guides/iiif.io.api.extension.navplace/'
 
 ---
 
