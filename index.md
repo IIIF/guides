@@ -33,7 +33,7 @@ implementer_cards:
     link: '/guide_for_implementers/'
   - label: How to Use the navPlace Extension With Leaflet
     description:  This guide will show how to use the navPlace property to connect geographic coordinates with IIIF manifests.
-    link: '/navplace/'
+    link: '{{ site.guides_url }}/guides/navplace/'
 ---
 
 {{ theme.block-center-start }}
