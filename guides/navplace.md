@@ -13,10 +13,10 @@ redirect_from:
 
 ---
 
-The IIIF Presentation API 3 was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use a Leaflet script to ingest the geographic coordinates from the Manifest.  
+The IIIF Presentation API 3 was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use the  Leaflet JS library to ingest the geographic coordinates from the Manifest and display them in a web map.  
 
 ## Why Leaflet?
-Leaflet is one of the most well known and easy to understand web mapping platforms. Once you know how to set one up, you know how to set more up.  Using Leaflet as the base will offer the most understandable instructions to a large audience.  You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
+Leaflet is one of the most widely used and easy to understand javascript web mapping libraries. With excellent API documentation, tutorial materials and broad browser compatibility, using Leaflet as the base will offer the most understandable instructions to a large audience.  You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
 
 ## I want to know more about the `navPlace` property.
 In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extension page](https://iiif.io/api/extension/navplace/).
@@ -96,7 +96,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
     ```
 
 3. Add Leaflet script to HTML page.
- 
+
     ```html
     <html>
         <head>
@@ -105,11 +105,11 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
             <link rel="stylesheet" href="...leaflet.css"/>
             <script src="...leaflet.js"></script>
         </head>
-        
+
         <body>
             <div id="leafletInstanceContainer"></div>
         </body>
-        
+
         <script>
           let manifest = {...}
           initializeLeaflet(manifest)
@@ -119,7 +119,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
           function initializeLeafletMap(manifestObject){
             let startingCoords = [12,12]
             let mymap = L.map('leafletInstanceContainer')
-            let leafletOptions = 
+            let leafletOptions =
             {
               attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
               maxZoom: 19
@@ -129,11 +129,11 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
               Find tile layers at http://leaflet-extras.github.io/leaflet-providers/preview/
              + */
             L.tileLayer(
-              'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+              'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
               leafletOptions
             ).addTo(mymap)
             mymap.setView(startingCoords,2)
-    
+
             //Add the GeoJSON from the Manifest object
             L.geoJSON(manifestObject.navPlace, {
                 pointToLayer: function (feature, latlng) {
@@ -150,7 +150,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
                 onEachFeature: pointEachFeature
             }).addTo(mymap)
           }
-    
+
           /**
              A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding these features to the map.  Here is where you detect what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
           */
@@ -239,7 +239,7 @@ crossorigin=""></script>
 
   function initializeLeafletMap(manifestObject){
     let startingCoords = [12,12]
-    let mymap = L.map('leafletInstanceContainer') 
+    let mymap = L.map('leafletInstanceContainer')
     L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -285,12 +285,13 @@ crossorigin=""></script>
 You can also [go to the example page](example.html) to see it on its own.
 
 ## Quick links
-Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures.  This list is not exhaustive.
+Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures, as well as other resources useful for creating with web maps.  This list is not exhaustive.
 
- * [Google Maps](https://projectmirador.org/)
- * [Apple Maps](https://www.apple.com/maps/)
- * [OpenStreetMap](https://www.google.com)
+ * [Leaflet](https://leafletjs.com)
  * [OpenLayers](https://openlayers.org/)
- * [Map Box](https://www.mapbox.com/)
+ * [Project Mirador](https://projectmirador.org/)
+ * [Apple Maps](https://www.apple.com/maps/)
+ * [Google Maps](https://www.google.com)
+ * [Mapbox](https://www.mapbox.com/)
  * [MapQuest](https://www.mapquest.com/)
-
+ * [Geosandbox](https://joeyklee.github.io/geosandbox/)
