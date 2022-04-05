@@ -13,10 +13,10 @@ redirect_from:
 
 ---
 
-The IIIF Presentation API 3 was recently extended with a property called `navPlace`. This property contains geographic coordinates in the form of GeoJSON-LD. This guide will show how to place this property onto a Manifest, then use a Leaflet script to ingest the geographic coordinates from the Manifest.  
+The IIIF Presentation API 3 was extended and now includes a property called `navPlace`. This property contains geographic coordinates in the form of [GeoJSON-LD](https://geojson.org/geojson-ld/). This guide will show how to include this property within a IIIF Manifest, and then demonstrate how to process and display the information from the `navPlace` property using the JS library.  
 
 ## Why Leaflet?
-Leaflet is one of the most well known and easy to understand web mapping platforms. Once you know how to set one up, you know how to set more up.  Using Leaflet as the base will offer the most understandable instructions to a large audience.  You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
+Leaflet is one of the most widely used and easy to understand javascript web mapping libraries. With excellent API documentation, tutorial materials and broad browser compatibility, using Leaflet as the base will offer the most understandable instructions to a large audience. You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
 
 ## I want to know more about the `navPlace` property.
 In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extension page](https://iiif.io/api/extension/navplace/).
@@ -285,12 +285,12 @@ crossorigin=""></script>
 You can also [go to the example page](example.html) to see it on its own.
 
 ## Quick links
-Below is a list of popular web mapping platforms that are similar to Leaflet that have similar set up procedures.  This list is not exhaustive.
-
- * [Google Maps](https://projectmirador.org/)
- * [Apple Maps](https://www.apple.com/maps/)
- * [OpenStreetMap](https://www.google.com)
+Below is a non-exhaustive list of popular web mapping platforms that are similar to Leaflet and have similar set up procedures. They offer a variety of tools for people interested in using maps on the web.  
  * [OpenLayers](https://openlayers.org/)
- * [Map Box](https://www.mapbox.com/)
+ * [Project Mirador](https://projectmirador.org/)
+ * [Apple Maps](https://www.apple.com/maps/)
+ * [Google Maps](https://www.google.com)
+ * [Mapbox](https://www.mapbox.com/)
  * [MapQuest](https://www.mapquest.com/)
+ * [Geosandbox](https://joeyklee.github.io/geosandbox/)
 
