@@ -126,8 +126,8 @@ This [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was
               maxZoom: 19
             }
             /**
-              Supply the Tile layer you want to use, as well as other options.
-              Find tile layers at http://leaflet-extras.github.io/leaflet-providers/preview/
+              Define the base map projection of the Earth that you want (satellite, elevation, infrared, etc.)
+              The projections are powered by Tile Service providers.  You can find examples at http://leaflet-extras.github.io/leaflet-providers/preview/
              + */
             L.tileLayer(
               'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
@@ -138,15 +138,15 @@ This [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was
             //Add the GeoJSON from the Manifest object
             L.geoJSON(manifestObject.navPlace, {
                 pointToLayer: function (feature, latlng) {
-                    let appColor = "#08c49c"
-                    return L.circleMarker(latlng, {
-                        radius: 8,
-                        fillColor: appColor,
-                        color: "#000",
-                        weight: 1,
-                        opacity: 1,
-                        fillOpacity: 0.8
-                    });
+                  let appColor = "#08c49c"
+                  return L.circleMarker(latlng, {
+                    radius: 8,
+                    fillColor: appColor,
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                  })
                 },
                 onEachFeature: pointEachFeature
             }).addTo(mymap)
@@ -156,18 +156,17 @@ This [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was
              A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding the feature to the map.  Here is where you detect what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as a language map.
           */
           function pointEachFeature(feature, layer){
-             if (feature.properties) {
-                if(feature.properties.label.en) {
-                    //Oh no is the label you want in the Manifest?  Get it like... 
-                    //popupContent += `<div><label>Label:</label>${manifest.label.en}</div>`
-
-                    popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
-                }
-                if(feature.properties.summary.en) {
-                    popupContent += `<div><label>Summary:</label>${feature.properties.summary.en}</div>`
-                }
+            //Oh no is the label you want in the Manifest? Instead of looking in the feature, look in the Manifest like... 
+            //popupContent += `<div><label>Label:</label>${manifest.label.en}</div>`
+            if (feature.properties) {
+              if(feature.properties.label.en) {
+                  popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
+              }
+              if(feature.properties.summary.en) {
+                  popupContent += `<div><label>Summary:</label>${feature.properties.summary.en}</div>`
+              }
             }
-            layer.bindPopup(popupContent);
+            layer.bindPopup(popupContent)
           }
         </script>
     </html>
@@ -253,20 +252,20 @@ crossorigin=""></script>
         detectRetina: false
       }
     ).addTo(mymap)
-    mymap.setView(startingCoords,2);
+    mymap.setView(startingCoords,2)
 
     //Add the GeoJSON from the Manifest object (manifestObject["navPlace"])
     L.geoJSON(manifestObject.navPlace, {
         pointToLayer: function (feature, latlng) {
-            let appColor = "#08c49c"
-            return L.circleMarker(latlng, {
-                radius: 8,
-                fillColor: appColor,
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            });
+          let appColor = "#08c49c"
+          return L.circleMarker(latlng, {
+              radius: 8,
+              fillColor: appColor,
+              color: "#000",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+          })
         },
         onEachFeature: pointEachFeature
     }).addTo(mymap)
