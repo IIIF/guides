@@ -13,7 +13,7 @@ redirect_from:
 
 ---
 
-The IIIF Presentation API 3 was extended and now includes a property called `navPlace`. This property contains geographic coordinates in the form of [GeoJSON-LD](https://geojson.org/geojson-ld/). This guide will show how to include this property within a IIIF Manifest, and then demonstrate how to process and display the information from the `navPlace` property using the JS library.  
+The IIIF Presentation API 3 was extended and now includes a property called `navPlace`. This property contains geographic coordinates in the form of [GeoJSON-LD](https://geojson.org/geojson-ld/). This guide will show `navPlace` within a IIIF Manifest, and then demonstrate how to process and display the information from the property using javascript and the Leaflet JS library.  
 
 ## Why Leaflet?
 Leaflet is one of the most widely used and easy to understand javascript web mapping libraries. With excellent API documentation, tutorial materials and broad browser compatibility, using Leaflet as the base will offer the most understandable instructions to a large audience. You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
@@ -22,7 +22,7 @@ Leaflet is one of the most widely used and easy to understand javascript web map
 In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extension page](https://iiif.io/api/extension/navplace/).
 
 ## Set up an HTML page with Leaflet
-This [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools Leaflet has to offer.
+The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools Leaflet has to offer.
 
 1. Generate a new basic HTML page with a specific container element for Leaflet.  Make sure to include the leaflet.css and leaflet.js script.
 
@@ -296,4 +296,3 @@ Below is a non-exhaustive list of popular web mapping platforms that are similar
  * [Mapbox](https://www.mapbox.com/)
  * [MapQuest](https://www.mapquest.com/)
  * [Geosandbox](https://joeyklee.github.io/geosandbox/)
-
