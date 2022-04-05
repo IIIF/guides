@@ -22,7 +22,7 @@ Leaflet is one of the most widely used and easy to understand javascript web map
 In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extension page](https://iiif.io/api/extension/navplace/).
 
 ## Set up an HTML page with Leaflet
-This is a simplified interpretation of the [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/).
+This [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools Leaflet has to offer.
 
 1. Generate a new basic HTML page with a specific container element for Leaflet.  Make sure to include the leaflet.css and leaflet.js script.
 
@@ -117,6 +117,7 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
             Initialize the Leaflet Map.  The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.
           */
           function initializeLeafletMap(manifestObject){
+            //[12,12] is in central Africa and functions as a good focal point when Leaflet initializes zoomed out.
             let startingCoords = [12,12]
             let mymap = L.map('leafletInstanceContainer')
             let leafletOptions = 
@@ -152,11 +153,14 @@ This is a simplified interpretation of the [Leaflet Quickstart Guide](https://le
           }
     
           /**
-             A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding these features to the map.  Here is where you detect what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
+             A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding the feature to the map.  Here is where you detect what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as a language map.
           */
           function pointEachFeature(feature, layer){
              if (feature.properties) {
                 if(feature.properties.label.en) {
+                    //Oh no is the label you want in the Manifest?  Get it like... 
+                    //popupContent += `<div><label>Label:</label>${manifest.label.en}</div>`
+
                     popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
                 }
                 if(feature.properties.summary.en) {
