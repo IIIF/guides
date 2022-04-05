@@ -40,7 +40,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
     </html>
     ```
 
-2. Generate a Manifest that contains navPlace.  In this example, we expect the geographic coordinates will be a FeatureCollection containing a single 'Point' Feature.  
+2. Generate a Manifest that contains navPlace. In this example, we expect the geographic coordinates will be a FeatureCollection containing a single 'Point' Feature.  
 
     ```json
     {
@@ -172,7 +172,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
     </html>
     ```
 
-That's it!  Now when this HTML page loads, it will initialize the Leaflet map with the FeatureCollection found in the `navPlace` property of this Manifest.  Below you will see the code implemented! You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
+That's it! Now when this HTML page loads, it will initialize the Leaflet map with the FeatureCollection found in the `navPlace` property of this Manifest. Below you will see the code implemented! You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
