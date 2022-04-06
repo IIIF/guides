@@ -16,10 +16,12 @@ redirect_from:
 The IIIF Presentation API 3 was extended and now includes a property called `navPlace`. This property contains geographic coordinates in the form of [GeoJSON-LD](https://geojson.org/geojson-ld/). This guide will show `navPlace` within a IIIF Manifest, and then demonstrate how to process and display the information from the property using javascript and the Leaflet JS library.  
 
 ## Why Leaflet?
-Leaflet is one of the most widely used and easy to understand javascript web mapping libraries. With excellent API documentation, tutorial materials and broad browser compatibility, using Leaflet as the base will offer the most understandable instructions to a large audience. You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
+Leaflet is one of the most widely used and thoughtfully designed javascript web mapping libraries. With excellent API documentation, tutorial materials and broad browser compatibility, Leaflet offers easy to follow instructions to a large audience. You can learn more about Leaflet at
 
-## I want to know more about the `navPlace` property.
-In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a resource. Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extension page](https://iiif.io/api/extension/navplace/).
+Leaflet is one of the most widely used and easy to understand javascript web mapping libraries. With excellent API documentation, tutorial materials and broad browser compatibility. Using Leaflet as the base will offer the most understandable instructions to a large audience. You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
+
+## The `navPlace` Property
+In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a [IIIF resource type](https://iiif.io/api/presentation/3.0/#2-resource-type-overview). Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extensions page](https://iiif.io/api/extension/navplace/).
 
 ## Set up an HTML page with Leaflet
 The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools Leaflet has to offer.
@@ -172,7 +174,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
     </html>
     ```
 
-That's it! Now when this HTML page loads, it will initialize the Leaflet map with the FeatureCollection found in the `navPlace` property of this Manifest. Below you will see the code implemented! You should see a Leaflet load up, zoomed out pretty far, with a single greenish Point drawn in Germany. Click on the point to see your metadata!
+That's it! When the HTML page loads, it will initialize a Leaflet map with the FeatureCollection found in the navPlace property of the Manifest. In the live example below, you should see the leaflet map, zoomed out, with a single green point drawn in the center of Germany. Click the point to view its metadata.
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
