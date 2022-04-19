@@ -1,5 +1,5 @@
 ---
-title: How to Use the navPlace Extension With Leaflet
+title: Use the navPlace Extension With Leaflet
 id: using_navplace
 layout: spec
 author: Bryan Haberberger
@@ -40,7 +40,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
     </html>
     ```
 
-2. Generate a Manifest that contains navPlace. In this example, we expect the geographic coordinates will be a FeatureCollection containing a single 'Point' Feature.  
+2. Generate a Manifest that contains `navPlace`. In this example, we expect the geographic coordinates will be a FeatureCollection containing a single 'Point' Feature.  
 
     ```json
     {
