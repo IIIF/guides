@@ -13,18 +13,18 @@ redirect_from:
 
 ---
 
-IIIF Presentation API 3 was extended to include a property called `navPlace`. The property contains geographic coordinates in the form of [GeoJSON-LD](https://geojson.org/geojson-ld/). This guide will show `navPlace` within a IIIF Manifest, and then demonstrate how to process and display the information from the property using javascript and the [Leaflet JS library](https://leafletjs.com/).  
+[IIIF Presentation API 3](https://iiif.io/api/presentation/3.0/) was extended to include a property called `navPlace`. The property contains geographic coordinates in the form of [GeoJSON-LD](https://geojson.org/geojson-ld/). This guide will show `navPlace` within a IIIF Manifest, and then demonstrate how to process and display the information from the property using javascript and the [Leaflet JS library](https://leafletjs.com/).  
 
 ## Why Leaflet?
-Leaflet is one of the most widely used and easy to understand javascript web mapping libraries with excellent API documentation, tutorial materials and broad browser compatibility. Using Leaflet as the base will offer the most understandable instructions to a large audience. You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
+Leaflet is one of the most widely used and easy to understand javascript web mapping libraries with excellent API documentation, tutorial materials, and broad browser compatibility. Using Leaflet as the base technology will offer the most understandable instructions to a large audience. You can learn more about Leaflet at [https://leafletjs.com/](https://leafletjs.com/).
 
 ## The `navPlace` Property
-In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a [IIIF resource type](https://iiif.io/api/presentation/3.0/#2-resource-type-overview). Note that the coordinates do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extensions page](https://iiif.io/api/extension/navplace/).
+In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a [IIIF resource type](https://iiif.io/api/presentation/3.0/#2-resource-type-overview). Note that the coordinates used do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extensions page](https://iiif.io/api/extension/navplace/).
 
-## Set up an HTML page with Leaflet
+## Set up a HTML Page with Leaflet
 The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools Leaflet has to offer.
 
-1. Generate a new basic HTML page with a specific container element for Leaflet.  Make sure to include the leaflet.css and leaflet.js script.
+1. Generate a new basic HTML page with a specific container element for Leaflet. Make sure to [include the leaflet.css and leaflet.js script](https://leafletjs.com/SlavaUkraini/examples/quick-start/#preparing-your-page).
 
     ```html
     <html>
@@ -114,7 +114,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
           let manifest = {...}
           initializeLeaflet(manifest)
           /**
-            Initialize the Leaflet Map.  The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.
+            Initialize the Leaflet Map. The map will need to know the GeoJSON from navPlace to draw it. This function assumes you are passing in the resolved Manifest JSON as a parameter. In other implementations, it may be necessary to perform a GET request to get the JSON. In javascript, the fetch API is a good place to start.
           */
           function initializeLeafletMap(manifestObject){
             //[12,12] is in central Africa and functions as a good focal point when Leaflet initializes zoomed out.
@@ -127,7 +127,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
             }
             /**
               Define the base map projection of the Earth that you want (satellite, elevation, infrared, etc.)
-              The projections are powered by Tile Service providers.  You can find examples at http://leaflet-extras.github.io/leaflet-providers/preview/
+              The projections are powered by Tile Service providers. You can find examples at http://leaflet-extras.github.io/leaflet-providers/preview/
              + */
             L.tileLayer(
               'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
@@ -153,7 +153,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
           }
     
           /**
-             A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding the feature to the map.  Here is where you detect what metadata appears in the pop-ups.  For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as a language map.
+             A helper function for Leaflet. Leaflet sees GeoJSON objects as "features". This function says what to do with each feature when adding the feature to the map. Here is where you detect what metadata appears in the pop-ups. For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property. Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as a language map.
           */
           function pointEachFeature(feature, layer){
             //Oh no is the label you want in the Manifest? Instead of looking in the feature, look in the Manifest like... 
@@ -172,14 +172,14 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
     </html>
     ```
 
-That's it! When the HTML page loads, it will initialize a Leaflet map with the FeatureCollection found in the navPlace property of the Manifest. In the live example below, you should see the leaflet map, zoomed out, with a single green point drawn in the center of Germany. Click the point to view its metadata.
+That's it! When the HTML page loads, it will initialize a Leaflet map with the FeatureCollection found in the `navPlace` property of the Manifest. In the live example below, you should see the Leaflet map, zoomed out, with a single green point drawn in the center of Germany. Click the point to view its metadata.
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-crossorigin=""/>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
 <div style="font-weight: bold;">
     <a href="https://guides.iiif.io/">IIIF Guides</a> #41 Leaflet Example
 </div>
