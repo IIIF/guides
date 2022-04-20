@@ -22,7 +22,7 @@ Leaflet is one of the most widely used and easy to understand javascript web map
 In simple terms, `navPlace` is used to supply geographic coordinates pertinent to a [IIIF resource type](https://iiif.io/api/presentation/3.0/#2-resource-type-overview). Note that the coordinates used do not imply any level of accuracy, temporality, or state of existence. You can read more about the `navPlace` property on the [IIIF Presentation API 3 extensions page](https://iiif.io/api/extension/navplace/).
 
 ## Set up a HTML Page with Leaflet
-The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools Leaflet has to offer.
+The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools and map customizations that Leaflet has to offer.
 
 1. Generate a new basic HTML page with a specific container element for Leaflet. Make sure to [include the leaflet.css and leaflet.js script](https://leafletjs.com/SlavaUkraini/examples/quick-start/#preparing-your-page).
 
