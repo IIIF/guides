@@ -15,3 +15,6 @@ group :development, :test do
   gem 'rspec'
   gem 'rake'
 end
+
+# For open graph and Twitter Card elements
+gem 'jekyll-seo-tag'
