@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IIIF Guide Leaflet Example</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   		integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   		crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   		integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   		crossorigin=""></script>
+    </head>
+    <body>
+    	<div style="font-weight: bold;">
+    		<a href="https://guides.iiif.io/">IIIF Guides</a> #41 Leaflet Example
+		</div>
+        <div id="leafletInstanceContainer" style="height: 70em;"></div>
+	    <script>
+	    	/**
+				A crude and quickly made Manifest with an empty Canvas.
+	    	*/
+	    	let manifestObj = {
+			  "@context": [
+			    "http://iiif.io/api/extension/navPlace-context/context.json",
+			    "http://iiif.io/api/presentation/3/context.json"
+			  ],
+			  "id": "http://www.example.org/manifest/1.json",
+			  "type": "Manifest",
+			  "label": {
+			    "en": [
+			      "Manifest Label"
+			    ]
+			  },
+			  "items": [
+			    {
+			      "id": "http://www.example.org/canvas/1.json",
+			      "type": "Canvas",
+			      "label": {
+				    "en": [
+				      "Canvas Label"
+				    ]
+				  }
+			    }
+			  ],
+			  "navPlace": {
+			    "type": "FeatureCollection",
+			    "features": [
+			      {
+			        "id": "http://www.example.org/geojson/1.json",
+			        "type": "Feature",
+			        "properties": {
+			          "label": {
+			            "en": [
+			              "Label to see in the Leaflet pop-up."
+			            ]
+			          },
+			          "summary": {
+			            "en": [
+			              "Summary to see in the Leaflet pop-up"
+			            ]
+			          }
+			        },
+			        "geometry": {
+			          "type": "Point",
+			          "coordinates": [
+			            9.9374867,
+			            51.53345
+			          ]
+			        }
+			      }
+			    ]
+			  }
+			}
+			initializeLeafletMap(manifestObj)
+	    
+		    /**
+            	Initialize the Leaflet Map. The map will need to know the GeoJSON from navPlace to draw it. This function assumes you are passing in the resolved Manifest JSON as a parameter. In other implementations, it may be necessary to perform a GET request to get the JSON. In javascript, the fetch API is a good place to start.
+          	*/
+	    	function initializeLeafletMap(manifestObject){
+	    		let startingCoords = [12,12]
+	    		let mymap = L.map('leafletInstanceContainer') 
+			    L.tileLayer(
+				    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				      maxZoom: 19,
+				      worldCopyJump: true,
+				      retina: '@2x',
+				      detectRetina: false
+				    }
+				  ).addTo(mymap)
+			    mymap.setView(startingCoords,2);
+
+			    //Add the GeoJSON from the Manifest object (manifestObject["navPlace"])
+			    L.geoJSON(manifestObject.navPlace, {
+			        pointToLayer: function (feature, latlng) {
+			            let appColor = "#08c49c"
+			            return L.circleMarker(latlng, {
+			                radius: 8,
+			                fillColor: appColor,
+			                color: "#000",
+			                weight: 1,
+			                opacity: 1,
+			                fillOpacity: 0.8
+			            });
+			        },
+			        onEachFeature: pointEachFeature
+			    }).addTo(mymap)
+	    	}
+
+	    	/**
+             A helper function for Leaflet. Leaflet sees GeoJSON objects as "features". This function says what to do with each feature when adding the feature to the map. Here is where you detect what metadata appears in the pop-ups. For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property. Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as a language map.
+          	*/
+	    	function pointEachFeature(feature, layer){
+	    		let popupContent = ``
+	    		 if (feature.properties) {
+			        if(feature.properties.label.en) {
+			            popupContent += `<div><label>Label:</label>${feature.properties.label.en}</div>`
+			        }
+			        if(feature.properties.summary.en) {
+			            popupContent += `<div><label>Summary:</label>${feature.properties.summary.en}</div>`
+			        }
+			    }
+			    layer.bindPopup(popupContent)
+	    	}
+	    </script>
+    </body>
+</html>

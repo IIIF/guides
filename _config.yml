@@ -12,6 +12,7 @@ webrick:
 
 plugins:
   - jekyll-last-modified-at
+  - jekyll-seo-tag
 
 # notification:
 #   enabled: true
