@@ -12,7 +12,7 @@
     </head>
     <body>
     	<div style="font-weight: bold;">
-    		<a href="https://guides.iiif.io/">IIIF Guides</a> #41 Leaflet Example
+    		<a href="`{{ site.guides_url }}/guides`">IIIF Guides</a> #41 Leaflet Example
 		</div>
         <div id="leafletInstanceContainer" style="height: 70em;"></div>
 	    <script>
@@ -73,10 +73,9 @@
 			}
 			initializeLeafletMap(manifestObj)
 	    
-	    /**
-	     	Initialize the Leaflet Map.
-	     	The map will need to know the GeoJSON from navPlace to draw it. For example purposes, this function assumes you are passing in the resolved manifest object as a parameter.  In reality, you may need to fetch() it first, or may even plan to supply them after initializing the Leaflet map.
-	    */
+		    /**
+            	Initialize the Leaflet Map. The map will need to know the GeoJSON from navPlace to draw it. This function assumes you are passing in the resolved Manifest JSON as a parameter. In other implementations, it may be necessary to perform a GET request to get the JSON. In javascript, the fetch API is a good place to start.
+          	*/
 	    	function initializeLeafletMap(manifestObject){
 	    		let startingCoords = [12,12]
 	    		let mymap = L.map('leafletInstanceContainer') 
@@ -109,12 +108,9 @@
 	    	}
 
 	    	/**
-	    	  A helper function for Leaflet.  Leaflet sees GeoJSON objects as "features".  This function says what to do with each feature when adding to the map.  This is where you supply the HTML or plain text containing the metadata you wish to show.  Here we are looking for a "label" and "summary".  I want them to show "display: block" so I wrap them in a <div> element.
-		  	*/
+             A helper function for Leaflet. Leaflet sees GeoJSON objects as "features". This function says what to do with each feature when adding the feature to the map. Here is where you detect what metadata appears in the pop-ups. For our purposes, we assume the metadata you want to show is in the GeoJSON 'properties' property. Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as a language map.
+          	*/
 	    	function pointEachFeature(feature, layer){
-	    		/*
-	    		Here is where you detec what metadata appears in the pop-ups.  For our purposes here, we assume the metadata you want to show is in the GeoJSON 'properties` property.  Our 'label' and 'summary' will be formatted as language maps, since they are most likely coming directly from a IIIF resource type and IIIF Presentation API 3 requires 'label' and 'summary' to be formatted as language maps.
-	    		*/
 	    		let popupContent = ``
 	    		 if (feature.properties) {
 			        if(feature.properties.label.en) {

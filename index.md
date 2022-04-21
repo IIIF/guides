@@ -31,8 +31,8 @@ implementer_cards:
   - label: Guide for IIIF implementers
     description: This brief guide will lead you through some of the decision points to help get you going with IIIF.
     link: '/guide_for_implementers/'
-  - label: How to Use the navPlace Extension With Leaflet
-    description:  This guide will show how to use the navPlace property to connect geographic coordinates with IIIF manifests.
+  - label: Using the navPlace Extension With Leaflet
+    description:  This guide will show how to use the navPlace property to connect geographic coordinates with IIIF Manifests.
     link: '{{ site.guides_url }}/guides/navplace/'
 ---
 

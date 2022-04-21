@@ -1,5 +1,5 @@
 ---
-title: Use the navPlace Extension With Leaflet
+title: Using the navPlace Extension With Leaflet
 id: using_navplace
 layout: spec
 author: Bryan Haberberger
@@ -181,7 +181,7 @@ That's it! When the HTML page loads, it will initialize a Leaflet map with the F
    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
    crossorigin=""></script>
 <div style="font-weight: bold;">
-    <a href="https://guides.iiif.io/">IIIF Guides</a> #41 Leaflet Example
+    <a href="`{{ site.guides_url }}/guides`">IIIF Guides</a> #41 Leaflet Example
 </div>
 <div id="leafletInstanceContainer" style="height:28em; max-width:68em;"></div>
 <script>
