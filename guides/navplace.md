@@ -45,7 +45,7 @@ The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was 
     ```json
     {
       "@context": [
-        "http://iiif.io/api/extension/navPlace-context/context.json",
+        "https://iiif.io/api/extension/navplace/context.json",
         "http://iiif.io/api/presentation/3/context.json"
       ],
       "id": "http://www.example.org/manifest/1.json",
@@ -188,7 +188,7 @@ That's it! When the HTML page loads, it will initialize a Leaflet map with the F
   //A crude and quickly made Manifest with an empty Canvas.
   let manifestObj = {
     "@context": [
-      "http://iiif.io/api/extension/navPlace-context/context.json",
+      "https://iiif.io/api/extension/navplace/context.json",
       "http://iiif.io/api/presentation/3/context.json"
     ],
     "id": "http://www.example.org/manifest/1.json",
