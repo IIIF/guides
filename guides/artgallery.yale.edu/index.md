@@ -7,6 +7,6 @@ homepage: https://collections.britishart.yale.edu/
 layout: guide
 ---
 
-![A screenshot showing to scroll down the YCBA catalog page](ycba_1.png)
+![A screenshot showing the location of the IIIF logo on the Yale Catalogue page](yale_iiiflogo.png)
 
-![A screenshot showing to click the Manifest link](ycba_2.png)
+![A screenshot showing the Manifest URL in Mirador](yale_mirador.png)
