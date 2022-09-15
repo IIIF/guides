@@ -2,7 +2,7 @@
 title: University College Dublin Libraries
 # One of: no, full or associate
 consortium: associate
-homepage: https://digital.ucd.ie/s
+homepage: https://digital.ucd.ie/
 layout: guide
 ---
 
