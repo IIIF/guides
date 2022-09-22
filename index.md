@@ -17,7 +17,7 @@ guide_cards:
 ux_cards:
   - label: Guide to IIIF personas
     description: How to understand your users through IIIF personas.
-    link: '/guides/personas'
+    link: '/guides/personas/'
 additional_cards:
   - label: Learn the basics of how IIIF works
     description: Read our plain language description of IIIF technology.
