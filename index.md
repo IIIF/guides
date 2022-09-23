@@ -14,6 +14,10 @@ guide_cards:
   - label: How to use IIIF viewers
     description: Learn how to use IIIF materials in a variety of viewers for teaching, research across sites, and more.
     link: '/using_iiif_resources/'
+ux_cards:
+  - label: Guide to IIIF personas
+    description: How to understand your users through IIIF personas.
+    link: '/guides/personas/'
 additional_cards:
   - label: Learn the basics of how IIIF works
     description: Read our plain language description of IIIF technology.
@@ -49,6 +53,14 @@ implementer_cards:
 ## Technical guides for implementers
 
 {% include blocks/cards.html items=page.implementer_cards %}
+
+{{ theme.block-end }}
+
+{{ theme.block-center-start }}
+
+## Guides on UX and design elements
+
+{% include blocks/cards.html items=page.ux_cards %}
 
 {{ theme.block-end }}
 

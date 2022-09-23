@@ -24,7 +24,7 @@ In simple terms, `navPlace` is used to supply geographic coordinates pertinent t
 ## Set up a HTML Page with Leaflet
 The [Leaflet Quickstart Guide](https://leafletjs.com/examples/quick-start/) was used as a basis for this guide, and should be viewed at your convenience to learn more about the tools and map customizations that Leaflet has to offer.
 
-1. Generate a new basic HTML page with a specific container element for Leaflet. Make sure to [include the leaflet.css and leaflet.js script](https://leafletjs.com/SlavaUkraini/examples/quick-start/#preparing-your-page).
+1. Generate a new basic HTML page with a specific container element for Leaflet. Make sure to [include the leaflet.css and leaflet.js script](https://leafletjs.com/index.html#preparing-your-page).
 
     ```html
     <html>
