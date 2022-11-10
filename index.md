@@ -37,7 +37,7 @@ implementer_cards:
     link: '/guide_for_implementers/'
   - label: Guide for Thinking about IIIF and SEO
     description: This brief guide will lead you through some of considerations related to what, if any, impact IIIF images and viewers will have when it comes to visibility in search engines.
-    link: '/guide_for_implementers/'
+    link: '/iiif-and-seo/'
   - label: Using the navPlace Extension With Leaflet
     description:  This guide will show how to use the navPlace property to connect geographic coordinates with IIIF Manifests.
     link: '{{ site.guides_url }}/guides/navplace/'

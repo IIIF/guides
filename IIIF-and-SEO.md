@@ -1,6 +1,6 @@
 ---
 title: Thinking about IIIF and SEO
-layout: guide
+layout: spec
 hero:
     image: "https://ids.si.edu/ids/iiif/CHSDM-139887_01/full/1024,/0/default.jpg"
 breadcrumbs:
