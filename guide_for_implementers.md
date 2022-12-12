@@ -89,7 +89,7 @@ Whichever kind of viewer you implement for your own site you’ll want to implem
 
 Here again, the [Cookbook of IIIF Recipes][annex-cookbook] may be an invaluable tool for replicating manifest best practices from within the community.
 
-To allow users to view your resources in another viewer you may also want to advertise that the resource has a presentation manifest available. You could link out from a resource page on your site to different viewers you host as well as include a special drag & drop link allowing a user to select their own tool. This kind of functionality is offically being explored as part of the [IIIF Content State API specification]({{ site.api_url | absolute_url }}/content-state/) which described "how we point at things in IIIF" including not just manifests, but annotations on those manifests as well. (See also ["What is IIIF Content State?""](https://tom-crane.medium.com/what-is-iiif-content-state-dd15a543939f))
+To allow users to view your resources in another viewer you may also want to advertise that the resource has a presentation manifest available. You could link out from a resource page on your site to different viewers you host as well as include a special drag & drop link allowing a user to select their own tool. This kind of functionality is available via the [IIIF Content State API specification]({{ site.api_url | absolute_url }}/content-state/) which described "how we point at things in IIIF" including not just manifests, but annotations on those manifests as well. (See also ["What is IIIF Content State?"](https://tom-crane.medium.com/what-is-iiif-content-state-dd15a543939f))
 
 
 ### Additional APIs
