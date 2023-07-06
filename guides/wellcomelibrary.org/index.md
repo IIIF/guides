@@ -1,10 +1,11 @@
 ---
-title: Wellcome Library
+title: Wellcome Collection
 # One of: no, full or associate
 consortium: full
-homepage: https://wellcomelibrary.org/collections/
+homepage: https://wellcomecollection.org/collections
 layout: guide
 ---
 
-![Click view online](wellcome-1.png)
-![Scroll to bottom of page and copy the IIIF Manifest link](wellcome-2.png)
+![Scroll to developers](wellcome-3.png)
+![API reference](wellcome-4.png)
+![IIIF APIs](wellcome-5.png)
