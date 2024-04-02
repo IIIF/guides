@@ -6,4 +6,4 @@ homepage: https://digitalcollections.lancaster.ac.uk/
 layout: guide
 ---
 
-![Open an item, and select the IIIF icon on the "About" pane.](lancaster.png)
+![Open an item, and select the IIIF icon on the "About" pane.](Lancaster.png)
