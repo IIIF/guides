@@ -24,6 +24,7 @@ There are also IIIF helper tools available on the Internet Archive that make it 
 The URL structure for the helper tool looks like:
 
 https://iiif.archive.org/iiif/helper/:id/  
+Our example becomes https://iiif.archive.org/iiif/helper/b29000427_0001
 
 Replace the :id with the identifier for the record.
 
