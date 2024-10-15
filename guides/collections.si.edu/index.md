@@ -1,5 +1,5 @@
 ---
-title: Smithsonian Institute
+title: Smithsonian Institution
 # One of: no, full or associate
 consortium: full
 homepage: https://collections.si.edu/search/results.htm?q=&iiif.enabled=true
