@@ -4,6 +4,7 @@ title: National Gallery of Art
 consortium: full
 homepage: https://www.nga.gov/collection/collection-search.html
 layout: guide
+visible: no
 ---
 
 ![Catalogue image](catalogue.png)
