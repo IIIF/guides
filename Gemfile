@@ -20,3 +20,5 @@ end
 gem 'jekyll-seo-tag'
 
 gem "webrick", "~> 1.7"
+# Pin liquify as 0.0.3 is broken
+gem "jekyll-liquify", "0.0.2"

@@ -27,7 +27,7 @@ If you notice a correction or would like to add to this list please either submi
   {% assign locations = site.pages %}
   {% assign sorted = locations | sort_natural: "title" %}
   {% for file in sorted %}
-    {% if file.path contains 'guides' and file.name != 'template.md' %} 
+    {% if file.path contains 'guides' and file.name != 'template.md' and file.visible != false %}
       <li>
         <a href="{{ site.guides_url | append: file.url |  absolute_url}}">{{ file.title }}</a>
       </li>
