@@ -3,14 +3,15 @@ title: University of Toronto
 # One of: no, full or associate
 consortium: full
 homepage: https://collections.library.utoronto.ca/
-direct: https://collections.library.utoronto.ca/view/wolfe:F7025
+direct: https://collections.library.utoronto.ca/
 layout: guide
 ---
 
-Use the "Copy Manifest" button on Collections and object pages.
+On the bottom of an object's page, click on the Share and Reuse tab and you will see the Copy IIIF manifest button for the object.
 
-![Click the Copy Manifest button at the top of the page.](mirador.png)
 
-Also see this dedicated page for IIIF Collections:
+![On the bottom of an object's page, click on the Share and Reuse tab and you will see the Copy IIIF manifest button for the object.](toronto.png)
 
-[https://collections.library.utoronto.ca/IIIF-collections.html](https://collections.library.utoronto.ca/IIIF-collections.html)
+Also see this dedicated page for how to access IIIF resources, check copyright and reuse regulations, and see what you can do with IIIF:
+
+[https://collections.library.utoronto.ca/explore/faq/getting_started](https://collections.library.utoronto.ca/explore/faq/getting_started)
