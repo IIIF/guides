@@ -7,7 +7,7 @@ direct: https://collections.library.utoronto.ca/
 layout: guide
 ---
 
-On the bottom of an object's page, click on the Share and Reuse tab and you will see the Copy IIIF manifest button for the object.
+On an object's page, click on the Share and Reuse tab and you will see the Copy IIIF manifest button for the object.
 
 
 ![On the bottom of an object's page, click on the Share and Reuse tab and you will see the Copy IIIF manifest button for the object.](toronto.png)
